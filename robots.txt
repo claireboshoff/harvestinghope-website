@@ -1,0 +1,5 @@
+# robots.txt for harvestinghope.africa
+User-agent: *
+Allow: /
+
+Sitemap: https://harvestinghope.africa/sitemap.xml

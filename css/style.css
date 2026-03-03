@@ -235,7 +235,18 @@ section {
 .nav-logo img {
   height: 44px;
   width: auto;
-  border-radius: var(--radius-sm);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* ── Global logo image fix ──
+   The logo PNG has white/cream corners outside its rounded gold border.
+   Clip them everywhere the logo appears so it blends on any background. */
+img[alt="Harvesting Hope Logo"],
+img[alt="Harvesting Hope"],
+img[alt="Loading..."] {
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .nav-links {
@@ -517,8 +528,9 @@ section {
   width: 160px;
   height: auto;
   margin: 0 auto 2rem;
-  border-radius: var(--radius-lg);
+  border-radius: 14px;
   box-shadow: 0 8px 40px rgba(92, 58, 30, 0.2);
+  overflow: hidden;
 }
 
 /* ============================================================
@@ -905,7 +917,8 @@ section {
 .footer-brand img {
   height: 50px;
   width: auto;
-  border-radius: var(--radius-sm);
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .footer h4 {
@@ -1258,7 +1271,7 @@ section {
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--green-dark);
+  background: var(--cream);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1273,6 +1286,8 @@ section {
 
 .page-loader img {
   width: 80px;
+  border-radius: 14px;
+  overflow: hidden;
   animation: pulse 1.5s ease-in-out infinite;
 }
 

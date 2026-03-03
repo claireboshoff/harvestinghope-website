@@ -29,72 +29,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/style.css">
 
-  <style>
-    .hero-warm {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(160deg, var(--cream) 0%, var(--gold-pale) 40%, var(--cream-dark) 70%, var(--green-lighter) 100%);
-      overflow: hidden;
-      padding-top: 80px;
-    }
-    .hero-warm::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      right: -20%;
-      width: 600px;
-      height: 600px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(200,149,46,0.1) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero-warm::after {
-      content: '';
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      right: 0;
-      height: 80px;
-      background: var(--white);
-      clip-path: ellipse(55% 100% at 50% 100%);
-    }
-    .hero-warm .hero-content {
-      text-align: center;
-      max-width: 800px;
-      padding: 2rem 1.5rem;
-      position: relative;
-      z-index: 1;
-    }
-    .hero-warm .hero-logo {
-      width: 160px;
-      height: auto;
-      margin: 0 auto 2rem;
-      border-radius: 16px;
-      box-shadow: 0 8px 40px rgba(92, 58, 30, 0.2);
-    }
-    .hero-warm h1 {
-      color: var(--green-dark);
-      margin-bottom: 1.5rem;
-    }
-    .hero-warm h1 span {
-      color: var(--gold-dark);
-    }
-    .hero-warm .eyebrow {
-      color: var(--gold-dark);
-    }
-    .hero-warm p.hero-desc {
-      color: var(--text-body);
-      font-size: 1.15rem;
-      margin-bottom: 2.5rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  </style>
-
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
@@ -121,24 +55,24 @@
   </div>
 
   <!-- Navigation -->
-  <nav class="navbar scrolled" id="navbar">
+  <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="index.html" class="nav-logo" style="color: var(--green-dark);">
+      <a href="index.html" class="nav-logo">
         <img src="images/logo.png" alt="Harvesting Hope Logo">
         <span>Harvesting Hope</span>
       </a>
       <div class="nav-links">
-        <a href="index.html" class="active" style="color: var(--text-body);">Home</a>
-        <a href="about.html" style="color: var(--text-body);">About</a>
-        <a href="products.html" style="color: var(--text-body);">Products</a>
-        <a href="blog/" style="color: var(--text-body);">Blog</a>
-        <a href="contact.html" style="color: var(--text-body);">Contact</a>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="blog/">Blog</a>
+        <a href="contact.html">Contact</a>
         <a href="shop.html" class="nav-cta">Shop</a>
       </div>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span style="background: var(--charcoal);"></span>
-        <span style="background: var(--charcoal);"></span>
-        <span style="background: var(--charcoal);"></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
   </nav>
@@ -154,7 +88,7 @@
   </div>
 
   <!-- Hero Section -->
-  <section class="hero-warm">
+  <section class="hero">
     <div class="hero-content">
       <img src="images/logo.png" alt="Harvesting Hope" class="hero-logo fade-in">
       <p class="eyebrow fade-in fade-in-delay-1">Sustainable Agriculture for Africa</p>

@@ -205,12 +205,12 @@ section {
   z-index: 1000;
   padding: 1rem 0;
   transition: all var(--transition);
-  background: transparent;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
 }
 
 .navbar.scrolled {
   background: rgba(255, 255, 255, 0.97);
-  backdrop-filter: blur(10px);
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
   padding: 0.6rem 0;
 }
@@ -228,12 +228,8 @@ section {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.25rem;
-  color: var(--white);
-  transition: color var(--transition);
-}
-
-.navbar.scrolled .nav-logo {
   color: var(--green-dark);
+  transition: color var(--transition);
 }
 
 .nav-logo img {
@@ -252,14 +248,10 @@ section {
   font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--white);
+  color: var(--text-body);
   position: relative;
   padding: 0.25rem 0;
   transition: color var(--transition);
-}
-
-.navbar.scrolled .nav-links a {
-  color: var(--text-body);
 }
 
 .nav-links a:hover,
@@ -314,12 +306,8 @@ section {
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--white);
-  transition: all var(--transition);
-}
-
-.navbar.scrolled .hamburger span {
   background: var(--charcoal);
+  transition: all var(--transition);
 }
 
 .hamburger.active span:nth-child(1) {
@@ -446,26 +434,41 @@ section {
 /* ============================================================
    Hero Section
    ============================================================ */
-.hero {
+.hero,
+.hero-warm {
   position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--green-dark) 0%, var(--brown-dark) 50%, var(--green-dark) 100%);
+  background: linear-gradient(160deg, var(--cream) 0%, var(--gold-pale) 40%, var(--cream-dark) 70%, var(--green-lighter) 100%);
   overflow: hidden;
   padding-top: 80px;
 }
 
-.hero::before {
+.hero::before,
+.hero-warm::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200, 149, 46, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after,
+.hero-warm::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
   left: 0;
   right: 0;
-  bottom: 0;
-  background: radial-gradient(ellipse at center top, rgba(200, 149, 46, 0.15) 0%, transparent 70%);
-  pointer-events: none;
+  height: 80px;
+  background: var(--white);
+  clip-path: ellipse(55% 100% at 50% 100%);
 }
 
 .hero-content {
@@ -476,23 +479,31 @@ section {
   z-index: 1;
 }
 
-.hero-content h1 {
-  color: var(--white);
+.hero-content h1,
+.hero h1 {
+  color: var(--green-dark);
   margin-bottom: 1.5rem;
   font-weight: 700;
 }
 
-.hero-content h1 span {
-  color: var(--gold);
+.hero-content h1 span,
+.hero h1 span {
+  color: var(--gold-dark);
 }
 
-.hero-content p {
-  color: rgba(255, 255, 255, 0.9);
-  font-size: 1.2rem;
+.hero-content p,
+.hero-desc {
+  color: var(--text-body);
+  font-size: 1.15rem;
   margin-bottom: 2.5rem;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.hero .eyebrow,
+.hero-warm .eyebrow {
+  color: var(--gold-dark);
 }
 
 .hero-buttons {
@@ -503,22 +514,11 @@ section {
 }
 
 .hero-logo {
-  width: 140px;
+  width: 160px;
   height: auto;
   margin: 0 auto 2rem;
   border-radius: var(--radius-lg);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-}
-
-/* Decorative Elements */
-.hero-decoration {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 80px;
-  background: var(--white);
-  clip-path: ellipse(55% 100% at 50% 100%);
+  box-shadow: 0 8px 40px rgba(92, 58, 30, 0.2);
 }
 
 /* ============================================================
@@ -1137,7 +1137,7 @@ section {
    Page Header (inner pages)
    ============================================================ */
 .page-header {
-  background: linear-gradient(135deg, var(--green-dark) 0%, var(--brown-dark) 100%);
+  background: linear-gradient(160deg, var(--cream) 0%, var(--gold-pale) 40%, var(--cream-dark) 70%, var(--green-lighter) 100%);
   padding: 10rem 0 4rem;
   text-align: center;
   position: relative;
@@ -1146,7 +1146,7 @@ section {
 .page-header::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   right: 0;
   height: 60px;
@@ -1155,18 +1155,19 @@ section {
 }
 
 .page-header h1 {
-  color: var(--white);
+  color: var(--green-dark);
   margin-bottom: 1rem;
 }
 
 .page-header p {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-body);
   font-size: 1.15rem;
   max-width: 600px;
   margin: 0 auto;
 }
 
 .page-header .eyebrow {
+  color: var(--gold-dark);
   margin-bottom: 0.75rem;
 }
 

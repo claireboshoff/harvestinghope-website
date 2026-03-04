@@ -4,32 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Harvesting Hope — Eliminating Hunger One Seed at a Time</title>
-  <meta name="description" content="Harvesting Hope transforms communities across Africa through sustainable agriculture, premium seeds, innovative watering systems, and bio-fertiliser. Donate or buy a kit today.">
-  <meta name="keywords" content="sustainable agriculture Africa, food security, community gardens, bio-fertilizer, watering systems, donate agricultural kit, Harvesting Hope">
+  <meta name="description" content="Harvesting Hope delivers drought-resistant seed kits, bucket watering systems, and bio-fertiliser to communities across Africa. Buy, donate, or gift a kit for R1,500.">
+  <meta name="keywords" content="sustainable farming Africa, seed kits, food security, drought resistant seeds, community gardens, bio fertiliser">
   <link rel="canonical" href="https://harvestinghope.africa/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Harvesting Hope — Eliminating Hunger One Seed at a Time">
-  <meta property="og:description" content="Transforming communities across Africa through sustainable agriculture. Donate or buy a kit to help eliminate hunger.">
   <meta property="og:url" content="https://harvestinghope.africa/">
-  <meta property="og:image" content="https://harvestinghope.africa/images/logo.png">
+  <meta property="og:title" content="Harvesting Hope — Eliminating Hunger One Seed at a Time">
+  <meta property="og:description" content="Drought-resistant seed kits, watering systems, and bio-fertiliser for communities across Africa. R1,500 per kit.">
+  <meta property="og:image" content="https://harvestinghope.africa/images/og-image.jpg">
   <meta property="og:site_name" content="Harvesting Hope">
+  <meta property="og:locale" content="en_ZA">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Harvesting Hope — Eliminating Hunger One Seed at a Time">
-  <meta name="twitter:description" content="Transforming communities across Africa through sustainable agriculture.">
-  <meta name="twitter:image" content="https://harvestinghope.africa/images/logo.png">
+  <meta name="twitter:description" content="Drought-resistant seed kits for communities across Africa.">
+  <meta name="twitter:image" content="https://harvestinghope.africa/images/og-image.jpg">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+  <link rel="apple-touch-icon" href="images/logo.png">
 
-  <!-- Styles -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Structured Data -->
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -37,13 +43,16 @@
     "name": "Harvesting Hope",
     "url": "https://harvestinghope.africa",
     "logo": "https://harvestinghope.africa/images/logo.png",
-    "description": "Eliminating hunger one seed at a time through sustainable agriculture across Africa.",
-    "foundingDate": "2024",
-    "founder": {
-      "@type": "Person",
-      "name": "Carin Moffett"
+    "description": "Harvesting Hope delivers drought-resistant seed kits, bucket watering systems, and bio-fertiliser to communities across Africa.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "ZA"
     },
-    "sameAs": []
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "info@harvestinghope.africa",
+      "contactType": "customer service"
+    }
   }
   </script>
 </head>
@@ -51,252 +60,291 @@
 
   <!-- Page Loader -->
   <div class="page-loader" id="pageLoader">
-    <img src="images/logo.png" alt="Loading...">
+    <div class="loader-content">
+      <img src="images/logo.png" alt="Harvesting Hope">
+    </div>
   </div>
 
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="container">
       <a href="index.html" class="nav-logo">
-        <img src="images/logo.png" alt="Harvesting Hope Logo">
+        <img src="images/logo.png" alt="Harvesting Hope logo">
         <span>Harvesting Hope</span>
       </a>
-      <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="about.html">About</a>
-        <a href="products.html">Products</a>
-        <a href="blog/">Blog</a>
-        <a href="contact.html">Contact</a>
-        <a href="shop.html" class="nav-cta">Shop</a>
-      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Our Kit</a></li>
+        <li><a href="blog/">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="shop.html" class="nav-cta">Donate a Kit</a></li>
+      </ul>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="products.html">Products</a>
-    <a href="shop.html">Shop</a>
-    <a href="blog/">Blog</a>
-    <a href="contact.html">Contact</a>
-  </div>
+  <main>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <img src="images/logo.png" alt="Harvesting Hope" class="hero-logo fade-in">
-      <p class="eyebrow fade-in fade-in-delay-1">Sustainable Agriculture for Africa</p>
-      <h1 class="fade-in fade-in-delay-2">Seeds of Change:<br><span>Nurturing Hope</span> Across Africa</h1>
-      <p class="hero-desc fade-in fade-in-delay-3">We eliminate hunger one seed at a time by transforming barren land into thriving gardens, empowering communities through faith, education, and sustainable farming.</p>
-      <div class="hero-buttons fade-in fade-in-delay-4">
-        <a href="shop.html" class="btn btn-primary btn-lg">Donate a Kit</a>
-        <a href="#how-it-works" class="btn btn-outline-green btn-lg">Learn How</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Problem / Mission Section -->
-  <section class="section-white">
-    <div class="container">
-      <div class="grid-2" style="align-items: center; gap: 4rem;">
-        <div class="fade-in">
-          <p class="eyebrow mb-3">The Challenge</p>
-          <h2>Millions Face Hunger.<br>We're Changing That.</h2>
-          <p class="mt-3">Across Africa, communities face food insecurity, water scarcity, and the loss of hope. But within these challenges lie extraordinary opportunities for change, growth, and resilience.</p>
-          <p class="mt-2">At Harvesting Hope, we believe that a single seed can spark a revolution. Our innovative bucket watering systems, premium seeds, and natural bio-fertiliser empower families to grow their own food and build self-sufficient communities.</p>
-          <a href="about.html" class="btn btn-outline-green mt-4">Our Story</a>
-        </div>
-        <div class="fade-in fade-in-delay-2" style="background: linear-gradient(135deg, var(--green-lighter), var(--cream)); border-radius: var(--radius-xl); padding: 3rem; text-align: center;">
-          <div style="font-size: 5rem; margin-bottom: 1rem;">&#127793;</div>
-          <h3 style="color: var(--green-dark);">Every Kit Plants<br>a Future</h3>
-          <p class="mt-2" style="font-size: 0.95rem;">Each agricultural kit contains everything a family needs to start growing: premium seeds, a watering system, and bio-fertiliser.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="section-cream" id="how-it-works">
-    <div class="container">
-      <p class="eyebrow text-center mb-2 fade-in">How It Works</p>
-      <h2 class="section-title fade-in">From Seed to Harvest</h2>
-      <p class="section-subtitle fade-in">Our approach is simple, sustainable, and scalable. Three steps to transform a community.</p>
-      <div class="grid-3">
-        <div class="step-item fade-in">
-          <div class="step-number">1</div>
-          <h3>Plant</h3>
-          <p>We provide premium seeds specifically selected for African growing conditions, paired with natural bio-fertiliser to enrich the soil.</p>
-        </div>
-        <div class="step-item fade-in fade-in-delay-1">
-          <div class="step-number">2</div>
-          <h3>Grow</h3>
-          <p>Our innovative bucket watering system delivers water efficiently to every plant, designed for sustainability even in water-scarce regions.</p>
-        </div>
-        <div class="step-item fade-in fade-in-delay-2">
-          <div class="step-number">3</div>
-          <h3>Harvest</h3>
-          <p>Communities harvest fresh, nutritious food while gaining the knowledge and tools to sustain gardens for generations to come.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Products Overview -->
-  <section class="section-white">
-    <div class="container">
-      <p class="eyebrow text-center mb-2 fade-in">What We Provide</p>
-      <h2 class="section-title fade-in">Tools for Transformation</h2>
-      <p class="section-subtitle fade-in">Everything a community needs to grow their own food, sustainably and affordably.</p>
-      <div class="grid-3">
-        <div class="product-card fade-in">
-          <div class="product-card-image">
-            <!-- Replace src with actual seeds photo: images/kit-seeds.jpg -->
-            <img src="images/kit-seeds.jpg" alt="Harvesting Hope Premium Seeds" onerror="this.style.display='none';this.parentElement.innerHTML='&#127793; <span style=&quot;display:block;margin-top:0.5rem;font-size:0.85rem;color:#6b6b6b;&quot;>Add photo: images/kit-seeds.jpg</span>';">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-bg" style="background-image: url('images/hero-bg.jpg')"></div>
+      <div class="hero-overlay"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-label">Sustainable Agriculture for Africa</div>
+          <h1>Eliminating Hunger <em>One Seed</em> at a Time</h1>
+          <p class="hero-text">One kit. Three essentials. A lifetime of harvests. We equip communities across Africa with drought-resistant seeds, water-smart irrigation, and organic fertiliser to grow their own food.</p>
+          <div class="hero-buttons">
+            <a href="shop.html" class="btn btn-primary btn-lg">Donate a Kit — R1,500</a>
+            <a href="#how-it-works" class="btn btn-secondary btn-lg">See How It Works</a>
           </div>
-          <div class="product-card-body">
-            <h3>Premium Seeds</h3>
-            <p>Specially selected varieties optimised for African growing conditions, promising bountiful harvests and vibrant, nutritious produce.</p>
-            <a href="products.html#seeds" class="btn btn-sm btn-outline-green">Learn More</a>
-          </div>
-        </div>
-        <div class="product-card fade-in fade-in-delay-1">
-          <div class="product-card-image">
-            <!-- Replace src with actual watering system photo: images/kit-watering.jpg -->
-            <img src="images/kit-watering.jpg" alt="Harvesting Hope Bucket Watering System" onerror="this.style.display='none';this.parentElement.innerHTML='&#128167; <span style=&quot;display:block;margin-top:0.5rem;font-size:0.85rem;color:#6b6b6b;&quot;>Add photo: images/kit-watering.jpg</span>';">
-          </div>
-          <div class="product-card-body">
-            <h3>Watering System</h3>
-            <p>Our ingenious bucket watering system sustainably nurtures every plant with unparalleled efficiency, even in water-scarce regions.</p>
-            <a href="products.html#watering" class="btn btn-sm btn-outline-green">Learn More</a>
-          </div>
-        </div>
-        <div class="product-card fade-in fade-in-delay-2">
-          <div class="product-card-image">
-            <!-- Replace src with actual bio-fertiliser photo: images/kit-fertiliser.jpg -->
-            <img src="images/kit-fertiliser.jpg" alt="Harvesting Hope Bio-Fertiliser" onerror="this.style.display='none';this.parentElement.innerHTML='&#129716; <span style=&quot;display:block;margin-top:0.5rem;font-size:0.85rem;color:#6b6b6b;&quot;>Add photo: images/kit-fertiliser.jpg</span>';">
-          </div>
-          <div class="product-card-body">
-            <h3>Bio-Fertiliser</h3>
-            <p>A natural blend that revitalises soil, boosts plant health, and fosters sustainable growth. Pure nourishment, naturally delivered.</p>
-            <a href="products.html#fertiliser" class="btn btn-sm btn-outline-green">Learn More</a>
+          <div class="hero-stat-bar">
+            <div class="hero-stat">
+              <div class="hero-stat-number" data-count="500">0</div>
+              <div class="hero-stat-label">Kits Delivered</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-number" data-count="50">0</div>
+              <div class="hero-stat-label">Communities</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-number" data-count="2000">0</div>
+              <div class="hero-stat-label">Lives Changed</div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Impact Stats -->
-  <section class="section-green">
-    <div class="container">
-      <p class="eyebrow text-center mb-2 fade-in">Our Impact</p>
-      <h2 class="section-title fade-in" style="color: var(--white);">Growing Hope, One Community at a Time</h2>
-      <div class="grid-4 mt-4">
-        <div class="stat-item fade-in">
-          <div class="stat-number" data-count="500">0</div>
-          <div class="stat-label">Kits Distributed</div>
-        </div>
-        <div class="stat-item fade-in fade-in-delay-1">
-          <div class="stat-number" data-count="50">0</div>
-          <div class="stat-label">Communities Reached</div>
-        </div>
-        <div class="stat-item fade-in fade-in-delay-2">
-          <div class="stat-number" data-count="2000">0</div>
-          <div class="stat-label">Lives Impacted</div>
-        </div>
-        <div class="stat-item fade-in fade-in-delay-3">
-          <div class="stat-number" data-count="5">0</div>
-          <div class="stat-label">Countries Active</div>
+    <!-- Mission / Problem -->
+    <section class="section mission-section">
+      <div class="container">
+        <div class="mission-grid">
+          <div class="fade-in-left">
+            <span class="section-label">The Problem</span>
+            <h2 class="section-title">Millions of Families Go Hungry — Not Because Food Can't Grow, But Because They Lack the Tools</h2>
+            <p>Across sub-Saharan Africa, 282 million people face food insecurity. Most live on land that could produce food — if they had the right seeds, water management, and soil nutrition.</p>
+            <p>Harvesting Hope exists to close that gap. Each kit we deliver contains everything a family or community needs to start growing nutritious food within weeks — no farming experience required.</p>
+            <div style="margin-top: var(--space-xl);">
+              <a href="about.html" class="btn btn-outline">Our Story</a>
+            </div>
+          </div>
+          <div class="mission-img fade-in-right">
+            <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600&h=500&fit=crop" alt="Community garden with fresh vegetables growing in African soil" loading="lazy">
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Testimonials -->
-  <section class="section-cream">
-    <div class="container">
-      <p class="eyebrow text-center mb-2 fade-in">Testimonials</p>
-      <h2 class="section-title fade-in">Voices of Hope</h2>
-      <p class="section-subtitle fade-in">Hear from the people who support and believe in our mission.</p>
-      <div class="grid-3">
-        <div class="testimonial-card fade-in">
-          <p>"This is a genius idea and I love the simplicity yet the innovative way of how it works. Brilliantly done!"</p>
-          <div class="testimonial-author">C. Smith</div>
-          <div class="testimonial-role">Sponsor</div>
-        </div>
-        <div class="testimonial-card fade-in fade-in-delay-1">
-          <p>"A product I not only want to see remove hunger in Africa and the world, but a product that should be in every home promoting healthy eating."</p>
-          <div class="testimonial-author">S. McHarry</div>
-          <div class="testimonial-role">Sponsor</div>
-        </div>
-        <div class="testimonial-card fade-in fade-in-delay-2">
-          <p>"I enjoy how it brings communities, health, wellness and the Word of God together in one box. Well done team!"</p>
-          <div class="testimonial-author">N. Freeman</div>
-          <div class="testimonial-role">Sponsor</div>
+    <!-- How It Works -->
+    <section class="section steps-section" id="how-it-works">
+      <div class="container text-center">
+        <span class="section-label" style="padding-left:0;">How It Works</span>
+        <h2 class="section-title">Three Steps to Food Security</h2>
+        <p class="section-subtitle centered">Each Harvesting Hope kit is designed for simplicity. No farming background needed — just soil, sunlight, and a willingness to grow.</p>
+
+        <div class="grid-3 steps-grid stagger" style="margin-top: var(--space-3xl);">
+          <div class="card-embossed step-card fade-in">
+            <div class="step-number">01</div>
+            <h3>Plant</h3>
+            <p>Open the kit, follow the simple planting guide, and sow drought-resistant seeds selected for your region's climate.</p>
+          </div>
+          <div class="card-embossed step-card fade-in">
+            <div class="step-number">02</div>
+            <h3>Grow</h3>
+            <p>Use the bucket watering system to conserve water. The bio-fertiliser enriches the soil naturally — no chemicals needed.</p>
+          </div>
+          <div class="card-embossed step-card fade-in">
+            <div class="step-number">03</div>
+            <h3>Harvest</h3>
+            <p>Within weeks, fresh vegetables are ready. Seeds can be saved for the next season, creating a self-sustaining cycle.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA Section -->
-  <section class="section-green" style="text-align: center;">
-    <div class="container">
-      <h2 class="fade-in" style="color: var(--white);">Ready to Make a Difference?</h2>
-      <p class="fade-in fade-in-delay-1" style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 1rem auto 2rem; font-size: 1.1rem;">Your donation is not just a gift — it's a lifeline. A beacon of hope that shines brightly across Africa. Together, we are harvesting hope.</p>
-      <div class="hero-buttons fade-in fade-in-delay-2">
-        <a href="shop.html" class="btn btn-primary btn-lg">Donate a Kit — R1,500</a>
-        <a href="shop.html#gift" class="btn btn-outline btn-lg">Gift a Kit</a>
+    <!-- Products Overview -->
+    <section class="section products-section">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-label" style="padding-left:0;">What's in the Kit</span>
+          <h2 class="section-title">Three Essentials. One Kit.</h2>
+          <p class="section-subtitle centered">Every Harvesting Hope kit contains the three pillars of sustainable food production — seeds, water, and nutrition.</p>
+        </div>
+
+        <div class="grid-3 stagger" style="margin-top: var(--space-3xl);">
+          <div class="product-card fade-in">
+            <img class="product-card-img" src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=500&h=300&fit=crop" alt="Variety of drought-resistant seeds ready for planting" loading="lazy">
+            <div class="product-card-body">
+              <h3>Premium Seeds</h3>
+              <p>Drought-resistant, high-yield varieties selected for African climates. Includes leafy greens, tomatoes, onions, and indigenous vegetables.</p>
+              <a href="products.html" class="btn btn-outline btn-sm">Learn More</a>
+            </div>
+          </div>
+          <div class="product-card fade-in">
+            <img class="product-card-img" src="https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?w=500&h=300&fit=crop" alt="Drip irrigation bucket watering system in a garden" loading="lazy">
+            <div class="product-card-body">
+              <h3>Bucket Watering System</h3>
+              <p>Gravity-fed drip irrigation that uses 70% less water than traditional methods. Simple to set up, built to last through multiple seasons.</p>
+              <a href="products.html" class="btn btn-outline btn-sm">Learn More</a>
+            </div>
+          </div>
+          <div class="product-card fade-in">
+            <img class="product-card-img" src="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?w=500&h=300&fit=crop" alt="Rich organic compost and bio-fertiliser for soil nutrition" loading="lazy">
+            <div class="product-card-body">
+              <h3>Bio-Fertiliser</h3>
+              <p>Organic microbe-rich soil enhancer that rebuilds depleted farmland. Chemical-free, safe for the environment, and proven to boost yields.</p>
+              <a href="products.html" class="btn btn-outline btn-sm">Learn More</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Impact Stats -->
+    <section class="section impact-section">
+      <div class="container text-center">
+        <span class="section-label" style="padding-left:0; color: var(--gold-light);">Our Impact</span>
+        <h2 class="section-title">Growing More Than Food — Growing Futures</h2>
+        <div class="divider divider-center" style="margin-bottom: var(--space-3xl);"></div>
+
+        <div class="grid-4 stagger">
+          <div class="stat-card fade-in">
+            <div class="stat-number" data-count="500">0</div>
+            <div class="stat-label">Kits Delivered</div>
+          </div>
+          <div class="stat-card fade-in">
+            <div class="stat-number" data-count="50">0</div>
+            <div class="stat-label">Communities Reached</div>
+          </div>
+          <div class="stat-card fade-in">
+            <div class="stat-number" data-count="2000">0</div>
+            <div class="stat-label">Lives Impacted</div>
+          </div>
+          <div class="stat-card fade-in">
+            <div class="stat-number" data-count="5">0</div>
+            <div class="stat-label">Countries</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section testimonials-section">
+      <div class="container">
+        <div class="text-center">
+          <span class="section-label" style="padding-left:0;">Stories of Change</span>
+          <h2 class="section-title">What Our Sponsors Say</h2>
+        </div>
+
+        <div class="grid-3 stagger" style="margin-top: var(--space-3xl);">
+          <div class="testimonial-card fade-in">
+            <p class="testimonial-quote">Knowing that my donation directly put seeds in the ground and food on tables — that's the kind of impact you can feel. Harvesting Hope makes it tangible.</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">SM</div>
+              <div>
+                <div class="testimonial-name">Sarah Mitchell</div>
+                <div class="testimonial-role">Kit Sponsor, Cape Town</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card fade-in">
+            <p class="testimonial-quote">We gifted 10 kits as part of our CSI programme. The feedback from the communities was extraordinary — families growing their own food within two months.</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">JB</div>
+              <div>
+                <div class="testimonial-name">James Botha</div>
+                <div class="testimonial-role">Corporate Sponsor, Johannesburg</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card fade-in">
+            <p class="testimonial-quote">I gifted a kit to my mother's church community in the Eastern Cape. They now have a garden that feeds 30 families every week. Best R1,500 I ever spent.</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">TN</div>
+              <div>
+                <div class="testimonial-name">Thandi Nkosi</div>
+                <div class="testimonial-role">Individual Donor, Durban</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="section cta-section">
+      <div class="container">
+        <h2>One Kit Changes Everything</h2>
+        <p>For R1,500, you give a family or community the tools to grow their own food — this season and every season after.</p>
+        <div class="cta-buttons">
+          <a href="shop.html" class="btn btn-primary btn-lg">Donate a Kit</a>
+          <a href="shop.html#gift" class="btn btn-secondary btn-lg">Gift a Kit</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="images/logo.png" alt="Harvesting Hope">
-          <p>Eliminating hunger one seed at a time. Transforming communities across Africa through sustainable agriculture and faith.</p>
+          <img src="images/logo.png" alt="Harvesting Hope logo">
+          <p>Eliminating hunger one seed at a time. We equip communities across Africa with everything they need to grow their own food.</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="Your email" required>
+            <button type="submit">Join</button>
+          </form>
         </div>
         <div>
-          <h4>Quick Links</h4>
-          <ul>
+          <h4>Navigate</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About Us</a></li>
-            <li><a href="products.html">Products</a></li>
+            <li><a href="products.html">Our Kit</a></li>
             <li><a href="shop.html">Shop</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Learn</h4>
+          <ul class="footer-links">
             <li><a href="blog/">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="products.html#seeds">Seeds</a></li>
+            <li><a href="products.html#watering">Watering</a></li>
+            <li><a href="products.html#fertiliser">Fertiliser</a></li>
           </ul>
         </div>
         <div>
-          <h4>Products</h4>
-          <ul>
-            <li><a href="products.html#seeds">Premium Seeds</a></li>
-            <li><a href="products.html#watering">Watering System</a></li>
-            <li><a href="products.html#fertiliser">Bio-Fertiliser</a></li>
-            <li><a href="shop.html">Buy a Kit</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Get in Touch</a></li>
+            <li><a href="mailto:info@harvestinghope.africa">info@harvestinghope.africa</a></li>
+            <li>South Africa</li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2024 Harvesting Hope. All rights reserved.</p>
-        <a href="https://harvestinghope.africa">harvestinghope.africa</a>
+        <span>&copy; 2024-2026 Harvesting Hope. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+        </div>
       </div>
     </div>
   </footer>
 
+  <!-- Sticky Mobile CTA -->
+  <div class="mobile-cta">
+    <a href="shop.html" class="btn btn-primary">Donate a Kit — R1,500</a>
+  </div>
+
+  <script src="js/config.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

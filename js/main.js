@@ -1,306 +1,285 @@
-/* ============================================================
+/* ============================================
    Harvesting Hope — Main JavaScript
-   Vanilla ES6+ — No dependencies
-   ============================================================ */
+   Vanilla ES6+ | Zero dependencies
+   ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initLoader();
+  initNavbar();
+  initMobileMenu();
+  initSmoothScroll();
+  initActiveNav();
+  initFadeAnimations();
+  initCounters();
+  initForms();
+  initFAQ();
+  initModal();
+});
 
-  // ── Page Loader ──────────────────────────────────────────
+/* --- Page Loader --- */
+function initLoader() {
   const loader = document.getElementById('pageLoader');
-  if (loader) {
-    window.addEventListener('load', () => {
-      setTimeout(() => loader.classList.add('hidden'), 400);
-    });
-    // Fallback: hide after 2s regardless
-    setTimeout(() => loader.classList.add('hidden'), 2000);
-  }
+  if (!loader) return;
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      loader.classList.add('hidden');
+      setTimeout(() => loader.remove(), 400);
+    }, 300);
+  });
+}
 
-  // ── Sticky Navbar ────────────────────────────────────────
+/* --- Sticky Navbar --- */
+function initNavbar() {
   const navbar = document.getElementById('navbar');
-  if (navbar) {
-    const onScroll = () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 60);
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
+  if (!navbar) return;
 
-  // ── Mobile Menu ──────────────────────────────────────────
+  const onScroll = () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+  };
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+}
+
+/* --- Mobile Menu --- */
+function initMobileMenu() {
   const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
+  const navLinks = document.getElementById('navLinks');
+  const overlay = document.getElementById('mobileOverlay');
+  if (!hamburger || !navLinks) return;
 
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      mobileMenu.classList.toggle('active');
-      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-    });
+  const toggle = () => {
+    const isOpen = navLinks.classList.toggle('open');
+    hamburger.classList.toggle('active', isOpen);
+    overlay?.classList.toggle('active', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  };
 
-    // Close on link click
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.remove('active');
-        document.body.style.overflow = '';
+  const close = () => {
+    navLinks.classList.remove('open');
+    hamburger.classList.remove('active');
+    overlay?.classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  hamburger.addEventListener('click', toggle);
+  overlay?.addEventListener('click', close);
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', close));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') close(); });
+}
+
+/* --- Smooth Scroll --- */
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      const target = document.querySelector(anchor.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      const offset = document.getElementById('navbar')?.offsetHeight || 80;
+      window.scrollTo({
+        top: target.offsetTop - offset,
+        behavior: 'smooth'
       });
     });
-
-    // Close on Escape
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-        hamburger.classList.remove('active');
-        mobileMenu.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-    });
-  }
-
-  // ── Smooth Scroll ────────────────────────────────────────
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', (e) => {
-      const target = document.querySelector(anchor.getAttribute('href'));
-      if (target) {
-        e.preventDefault();
-        const offset = navbar ? navbar.offsetHeight + 20 : 80;
-        const top = target.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
-    });
   });
+}
 
-  // ── Active Nav Link ──────────────────────────────────────
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
+/* --- Active Nav Link --- */
+function initActiveNav() {
+  const current = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(link => {
     const href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+    if (href === current || (current === '' && href === 'index.html')) {
       link.classList.add('active');
-    } else {
+    } else if (!link.classList.contains('nav-cta')) {
       link.classList.remove('active');
     }
   });
+}
 
-  // ── Scroll Animations (Fade In) ─────────────────────────
-  const fadeElements = document.querySelectorAll('.fade-in');
-  if (fadeElements.length > 0) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+/* --- Fade-in Animations --- */
+function initFadeAnimations() {
+  const elements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
+  if (!elements.length) return;
 
-    fadeElements.forEach(el => observer.observe(el));
-  }
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 
-  // ── Counter Animation ───────────────────────────────────
+  elements.forEach(el => observer.observe(el));
+}
+
+/* --- Counter Animations --- */
+function initCounters() {
   const counters = document.querySelectorAll('[data-count]');
-  if (counters.length > 0) {
-    const counterObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.dataset.count, 10);
-          const suffix = el.dataset.suffix || '';
-          const prefix = el.dataset.prefix || '';
-          const duration = 2000;
-          const start = performance.now();
+  if (!counters.length) return;
 
-          const animate = (now) => {
-            const progress = Math.min((now - start) / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            const current = Math.floor(eased * target);
-            el.textContent = prefix + current.toLocaleString() + (current >= target ? '+' : '') + suffix;
-            if (progress < 1) requestAnimationFrame(animate);
-          };
+  const animate = (el) => {
+    const target = parseInt(el.dataset.count, 10);
+    const duration = 2000;
+    const start = performance.now();
 
-          requestAnimationFrame(animate);
-          counterObserver.unobserve(el);
-        }
-      });
-    }, { threshold: 0.3 });
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.floor(target * eased).toLocaleString();
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target.toLocaleString() + '+';
+    };
 
-    counters.forEach(el => counterObserver.observe(el));
-  }
+    requestAnimationFrame(step);
+  };
 
-  // ── Form Validation & Submission ─────────────────────────
-  const contactForm = document.querySelector('.contact-form');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animate(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(el => observer.observe(el));
+}
+
+/* --- Forms --- */
+function initForms() {
+  const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const formData = new FormData(contactForm);
-      const data = Object.fromEntries(formData);
-
-      // Validate
-      if (!data.name || !data.email || !data.message) {
-        showToast('Please fill in all required fields.', 'error');
-        return;
-      }
-      if (!isValidEmail(data.email)) {
-        showToast('Please enter a valid email address.', 'error');
-        return;
-      }
-
-      const btn = contactForm.querySelector('button[type="submit"]');
-      const originalText = btn.textContent;
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-
-      try {
-        const webhookUrl = window.SITE_CONFIG?.contactWebhook;
-        if (webhookUrl) {
-          await fetch(webhookUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-          });
-        }
-        showToast('Message sent successfully! We\'ll be in touch.', 'success');
+      if (!validateForm(contactForm)) return;
+      const data = Object.fromEntries(new FormData(contactForm));
+      const webhook = window.SITE_CONFIG?.contactWebhook;
+      if (webhook) {
+        try {
+          await fetch(webhook, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+          showToast('Message sent! We\'ll get back to you soon.', 'success');
+          contactForm.reset();
+        } catch { showToast('Something went wrong. Please try again.', 'error'); }
+      } else {
+        showToast('Message received! We\'ll be in touch.', 'success');
         contactForm.reset();
-      } catch (err) {
-        showToast('Something went wrong. Please email us directly at info@harvestinghope.africa', 'error');
-      } finally {
-        btn.textContent = originalText;
-        btn.disabled = false;
       }
     });
   }
 
-  // ── Gift Form ────────────────────────────────────────────
-  const giftForm = document.querySelector('.gift-form');
+  const giftForm = document.getElementById('giftForm');
   if (giftForm) {
     giftForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const formData = new FormData(giftForm);
-      const data = Object.fromEntries(formData);
-
-      if (!data.senderName || !data.senderEmail || !data.recipientName || !data.recipientEmail) {
-        showToast('Please fill in all required fields.', 'error');
-        return;
-      }
-      if (!isValidEmail(data.senderEmail) || !isValidEmail(data.recipientEmail)) {
-        showToast('Please enter valid email addresses.', 'error');
-        return;
-      }
-
-      const btn = giftForm.querySelector('button[type="submit"]');
-      const originalText = btn.textContent;
-      btn.textContent = 'Sending...';
-      btn.disabled = true;
-
-      try {
-        const webhookUrl = window.SITE_CONFIG?.giftWebhook;
-        if (webhookUrl) {
-          await fetch(webhookUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-          });
-        }
-        showToast('Gift request sent! We\'ll be in touch with next steps.', 'success');
+      if (!validateForm(giftForm)) return;
+      const data = Object.fromEntries(new FormData(giftForm));
+      const webhook = window.SITE_CONFIG?.giftWebhook;
+      if (webhook) {
+        try {
+          await fetch(webhook, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+          showToast('Gift kit request submitted!', 'success');
+          giftForm.reset();
+          closeModal();
+        } catch { showToast('Something went wrong. Please try again.', 'error'); }
+      } else {
+        showToast('Gift kit request noted! We\'ll be in touch.', 'success');
         giftForm.reset();
         closeModal();
-      } catch (err) {
-        showToast('Something went wrong. Please email us at info@harvestinghope.africa', 'error');
-      } finally {
-        btn.textContent = originalText;
-        btn.disabled = false;
       }
     });
   }
 
-  // ── Newsletter Form ──────────────────────────────────────
-  const newsletterForms = document.querySelectorAll('.newsletter-form');
-  newsletterForms.forEach(form => {
-    form.addEventListener('submit', async (e) => {
+  const newsletterForm = document.getElementById('newsletterForm');
+  if (newsletterForm) {
+    newsletterForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const email = form.querySelector('input[type="email"]').value;
-
-      if (!isValidEmail(email)) {
-        showToast('Please enter a valid email address.', 'error');
-        return;
+      const email = newsletterForm.querySelector('input[type="email"]').value;
+      if (!email) return;
+      const webhook = window.SITE_CONFIG?.newsletterWebhook;
+      if (webhook) {
+        try { await fetch(webhook, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) }); } catch {}
       }
+      showToast('Subscribed! Welcome to the community.', 'success');
+      newsletterForm.reset();
+    });
+  }
+}
 
-      try {
-        const webhookUrl = window.SITE_CONFIG?.newsletterWebhook;
-        if (webhookUrl) {
-          await fetch(webhookUrl, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email })
-          });
-        }
-        showToast('Subscribed! Welcome to the Harvesting Hope community.', 'success');
-        form.reset();
-      } catch (err) {
-        showToast('Something went wrong. Please try again.', 'error');
-      }
+function validateForm(form) {
+  let valid = true;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  form.querySelectorAll('[required]').forEach(input => {
+    const errorEl = input.nextElementSibling;
+    if (!input.value.trim()) {
+      input.classList.add('error');
+      if (errorEl?.classList.contains('form-error')) { errorEl.textContent = 'This field is required'; errorEl.classList.add('visible'); }
+      valid = false;
+    } else if (input.type === 'email' && !emailRegex.test(input.value)) {
+      input.classList.add('error');
+      if (errorEl?.classList.contains('form-error')) { errorEl.textContent = 'Please enter a valid email'; errorEl.classList.add('visible'); }
+      valid = false;
+    } else {
+      input.classList.remove('error');
+      if (errorEl?.classList.contains('form-error')) { errorEl.classList.remove('visible'); }
+    }
+  });
+  return valid;
+}
+
+/* --- Toast Notifications --- */
+function showToast(message, type = 'success') {
+  const existing = document.querySelector('.toast');
+  if (existing) existing.remove();
+  const toast = document.createElement('div');
+  toast.className = `toast toast-${type}`;
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  requestAnimationFrame(() => toast.classList.add('show'));
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => toast.remove(), 300);
+  }, 4000);
+}
+
+/* --- FAQ Accordion --- */
+function initFAQ() {
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(openItem => openItem.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
     });
   });
+}
 
-  // ── Modal ────────────────────────────────────────────────
-  const modalOverlay = document.querySelector('.modal-overlay');
-  const modalCloseBtn = document.querySelector('.modal-close');
+/* --- Modal --- */
+function initModal() {
+  const openBtns = document.querySelectorAll('[data-modal]');
+  const backdrop = document.getElementById('modalBackdrop');
+  const modal = document.getElementById('modal');
+  if (!backdrop || !modal) return;
 
-  window.openGiftModal = () => {
-    if (modalOverlay) {
-      modalOverlay.classList.add('active');
+  openBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      backdrop.classList.add('active');
+      modal.classList.add('active');
       document.body.style.overflow = 'hidden';
-    }
-  };
-
-  function closeModal() {
-    if (modalOverlay) {
-      modalOverlay.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-  }
-
-  if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);
-  if (modalOverlay) {
-    modalOverlay.addEventListener('click', (e) => {
-      if (e.target === modalOverlay) closeModal();
     });
-  }
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeModal();
   });
 
-  // ── FAQ Accordion ────────────────────────────────────────
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const question = item.querySelector('.faq-question');
-    if (question) {
-      question.addEventListener('click', () => {
-        const isOpen = item.classList.contains('active');
-        // Close all
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-        // Toggle current
-        if (!isOpen) item.classList.add('active');
-      });
-    }
-  });
+  modal.querySelectorAll('.modal-close').forEach(btn => btn.addEventListener('click', closeModal));
+  backdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+}
 
-  // ── Helpers ──────────────────────────────────────────────
-  function isValidEmail(email) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  }
-
-  function showToast(message, type = 'success') {
-    const existing = document.querySelector('.toast');
-    if (existing) existing.remove();
-
-    const toast = document.createElement('div');
-    toast.className = `toast toast-${type}`;
-    toast.textContent = message;
-    document.body.appendChild(toast);
-
-    requestAnimationFrame(() => toast.classList.add('show'));
-
-    setTimeout(() => {
-      toast.classList.remove('show');
-      setTimeout(() => toast.remove(), 300);
-    }, 4000);
-  }
-});
+function closeModal() {
+  const backdrop = document.getElementById('modalBackdrop');
+  const modal = document.getElementById('modal');
+  if (backdrop) backdrop.classList.remove('active');
+  if (modal) modal.classList.remove('active');
+  document.body.style.overflow = '';
+}

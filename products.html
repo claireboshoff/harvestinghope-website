@@ -3,337 +3,164 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products — Harvesting Hope</title>
-  <meta name="description" content="Discover Harvesting Hope's premium seeds, innovative bucket watering system, and natural bio-fertiliser — sustainable agricultural tools designed for African growing conditions.">
-  <meta name="keywords" content="premium seeds Africa, bucket watering system, bio-fertiliser, sustainable agriculture products, drought-resistant seeds, natural fertilizer">
+  <title>Our Kit — Seeds, Watering System & Bio-Fertiliser | Harvesting Hope</title>
+  <meta name="description" content="Every Harvesting Hope kit contains drought-resistant seeds, a bucket watering system, and organic bio-fertiliser. Everything a community needs to grow food.">
   <link rel="canonical" href="https://harvestinghope.africa/products.html">
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Products — Harvesting Hope">
-  <meta property="og:description" content="Premium seeds, an innovative watering system, and natural bio-fertiliser — everything a community needs to grow sustainably.">
   <meta property="og:url" content="https://harvestinghope.africa/products.html">
-  <meta property="og:image" content="https://harvestinghope.africa/images/logo.png">
+  <meta property="og:title" content="Our Kit | Harvesting Hope">
+  <meta property="og:description" content="Drought-resistant seeds, water-smart irrigation, and organic bio-fertiliser in one complete kit.">
+  <meta property="og:image" content="https://harvestinghope.africa/images/og-image.jpg">
   <meta property="og:site_name" content="Harvesting Hope">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Products — Harvesting Hope">
-  <meta name="twitter:description" content="Premium seeds, an innovative watering system, and natural bio-fertiliser for sustainable agriculture across Africa.">
-  <meta name="twitter:image" content="https://harvestinghope.africa/images/logo.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/logo.png">
-
-  <!-- Styles -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-
-  <!-- Structured Data -->
   <script type="application/ld+json">
   [
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Harvesting Hope Premium Seeds",
-      "description": "Drought-resistant, high-yield seed varieties specifically selected and optimised for African growing conditions.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Harvesting Hope"
-      },
-      "image": "https://harvestinghope.africa/images/logo.png",
-      "url": "https://harvestinghope.africa/products.html#seeds",
-      "category": "Agricultural Seeds"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Harvesting Hope Bucket Watering System",
-      "description": "An ingenious bucket-based watering system designed for efficient water use, simple setup, and sustainable irrigation in water-scarce regions.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Harvesting Hope"
-      },
-      "image": "https://harvestinghope.africa/images/logo.png",
-      "url": "https://harvestinghope.africa/products.html#watering",
-      "category": "Agricultural Irrigation"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Harvesting Hope Bio-Fertiliser",
-      "description": "A natural blend of beneficial microbes that enhances soil health, reduces chemical dependence, and increases crop yields sustainably.",
-      "brand": {
-        "@type": "Brand",
-        "name": "Harvesting Hope"
-      },
-      "image": "https://harvestinghope.africa/images/logo.png",
-      "url": "https://harvestinghope.africa/products.html#fertiliser",
-      "category": "Agricultural Fertiliser"
-    }
+    { "@context": "https://schema.org", "@type": "Product", "name": "Premium Seed Kit", "description": "Drought-resistant, high-yield seed varieties optimised for African climates.", "offers": { "@type": "Offer", "price": "1500", "priceCurrency": "ZAR", "availability": "https://schema.org/InStock" } },
+    { "@context": "https://schema.org", "@type": "Product", "name": "Bucket Watering System", "description": "Gravity-fed drip irrigation that uses 70% less water than traditional methods.", "offers": { "@type": "Offer", "price": "1500", "priceCurrency": "ZAR", "availability": "https://schema.org/InStock" } },
+    { "@context": "https://schema.org", "@type": "Product", "name": "Bio-Fertiliser", "description": "Organic microbe-rich soil enhancer that rebuilds depleted farmland.", "offers": { "@type": "Offer", "price": "1500", "priceCurrency": "ZAR", "availability": "https://schema.org/InStock" } }
   ]
   </script>
 </head>
 <body>
+  <div class="page-loader" id="pageLoader"><div class="loader-content"><img src="images/logo.png" alt="Harvesting Hope"></div></div>
 
-  <!-- Page Loader -->
-  <div class="page-loader" id="pageLoader">
-    <img src="images/logo.png" alt="Loading...">
-  </div>
-
-  <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="index.html" class="nav-logo">
-        <img src="images/logo.png" alt="Harvesting Hope Logo">
-        <span>Harvesting Hope</span>
-      </a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="products.html" class="active">Products</a>
-        <a href="blog/">Blog</a>
-        <a href="contact.html">Contact</a>
-        <a href="shop.html" class="nav-cta">Shop</a>
-      </div>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Harvesting Hope logo"><span>Harvesting Hope</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html" class="active">Our Kit</a></li>
+        <li><a href="blog/">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="shop.html" class="nav-cta">Donate a Kit</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="products.html">Products</a>
-    <a href="shop.html">Shop</a>
-    <a href="blog/">Blog</a>
-    <a href="contact.html">Contact</a>
-  </div>
-
-  <!-- Page Header -->
-  <section class="page-header">
-    <div class="container">
-      <p class="eyebrow fade-in">Tools for Transformation</p>
-      <h1 class="fade-in fade-in-delay-1">Our Products</h1>
-      <p class="fade-in fade-in-delay-2">Everything a community needs to transform barren land into a thriving, sustainable garden.</p>
-    </div>
-  </section>
-
-  <!-- Overview -->
-  <section class="section-white">
-    <div class="container">
-      <div class="fade-in" style="max-width: 800px; margin: 0 auto; text-align: center;">
-        <p class="eyebrow mb-3">Our Approach</p>
-        <h2 class="mb-3">Simple Tools, Lasting Impact</h2>
-        <p>Harvesting Hope products are designed with one goal in mind: to make sustainable agriculture accessible to every family in Africa. Our carefully developed range of premium seeds, an innovative bucket watering system, and natural bio-fertiliser work together as a complete growing solution. Each product is engineered for simplicity, sustainability, and maximum yield — so communities can grow their own food with confidence, even in the most challenging conditions.</p>
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <span class="section-label" style="padding-left:0; color: var(--gold-light);">What's in the Kit</span>
+        <h1>Three Essentials. One Kit. A Lifetime of Harvests.</h1>
+        <p>Every component is selected for African conditions — drought-resistant, sustainable, and simple to use.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Seeds Section -->
-  <section class="section-cream" id="seeds">
-    <div class="container">
-      <div class="grid-2" style="align-items: center; gap: 4rem;">
-        <div class="fade-in fade-in-delay-1" style="background: linear-gradient(135deg, var(--green-lighter), var(--cream)); border-radius: var(--radius-xl); padding: 3rem; text-align: center;">
-          <div style="font-size: 5rem; margin-bottom: 1rem;">&#127793;</div>
-          <h3 style="color: var(--green-dark);">Premium Seeds</h3>
-          <p class="mt-2" style="font-size: 0.95rem;">Specially selected for African soil and climate conditions to deliver the best possible harvest.</p>
-        </div>
-        <div class="fade-in">
-          <p class="eyebrow mb-3">Product 01</p>
-          <h2>Premium Seed Varieties</h2>
-          <p class="mt-3">Our seeds are not ordinary seeds. Each variety has been carefully selected and optimised for African growing conditions, ensuring they thrive in the diverse climates and soil types found across the continent. From nutrient-rich vegetables to hardy grains, our seed selection is designed to provide families with a well-rounded, nutritious harvest.</p>
-          <p class="mt-2">Every seed undergoes rigorous testing to ensure viability, germination rates, and adaptability. We work with agricultural experts to identify varieties that deliver the highest yields with the lowest water requirements.</p>
-          <div class="mt-4" style="display: flex; flex-direction: column; gap: 1rem;">
-            <div class="value-item">
-              <div class="value-icon">&#127766;</div>
-              <div>
-                <h4>Drought-Resistant</h4>
-                <p>Selected to withstand water-scarce environments, ensuring crops survive even in dry seasons.</p>
-              </div>
-            </div>
-            <div class="value-item">
-              <div class="value-icon">&#128200;</div>
-              <div>
-                <h4>High Yield</h4>
-                <p>Optimised for maximum output per plant, so every seed planted delivers the greatest possible harvest.</p>
-              </div>
-            </div>
-            <div class="value-item">
-              <div class="value-icon">&#129382;</div>
-              <div>
-                <h4>Nutritious</h4>
-                <p>Varieties chosen for their nutritional value, providing essential vitamins and minerals for healthy communities.</p>
-              </div>
-            </div>
+    <!-- Seeds -->
+    <section class="section mission-section" id="seeds">
+      <div class="container">
+        <div class="mission-grid">
+          <div class="fade-in-left">
+            <span class="section-label">Component One</span>
+            <h2 class="section-title">Premium Drought-Resistant Seeds</h2>
+            <p>Every kit includes a carefully selected mix of vegetable seeds bred for Africa's diverse climates. These aren't generic seeds — they're varieties proven to thrive in heat, resist drought, and produce high yields even in poor soil.</p>
+            <h4 style="margin: var(--space-xl) 0 var(--space-md);">What's Included</h4>
+            <ul style="padding-left: var(--space-xl); color: var(--text-light); line-height: 2;">
+              <li>Leafy greens (spinach, Swiss chard, moringa)</li>
+              <li>Tomatoes (heat-tolerant varieties)</li>
+              <li>Onions and garlic</li>
+              <li>Indigenous vegetables (amaranth, cowpeas)</li>
+              <li>Herbs (coriander, parsley)</li>
+            </ul>
+            <h4 style="margin: var(--space-xl) 0 var(--space-md);">Why These Seeds</h4>
+            <p>Each variety is selected for three qualities: drought resistance, nutritional density, and the ability to produce seeds for the next planting cycle — creating a self-sustaining food source.</p>
+          </div>
+          <div class="mission-img fade-in-right">
+            <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=500&fit=crop" alt="Variety of vegetable seeds ready for planting" loading="lazy">
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Watering System Section -->
-  <section class="section-white" id="watering">
-    <div class="container">
-      <div class="grid-2" style="align-items: center; gap: 4rem;">
-        <div class="fade-in">
-          <p class="eyebrow mb-3">Product 02</p>
-          <h2>Bucket Watering System</h2>
-          <p class="mt-3">Our ingenious bucket watering system is at the heart of Harvesting Hope's approach to sustainable agriculture. Designed for simplicity and efficiency, this clever system ensures that every drop of water is used wisely, delivering moisture directly to plant roots where it is needed most.</p>
-          <p class="mt-2">The system requires no electricity, no complex plumbing, and no specialised training. It is a truly accessible solution that any family can set up and maintain, turning the challenge of water scarcity into a manageable part of everyday gardening.</p>
-          <h3 class="mt-4 mb-3">How It Works</h3>
-          <div style="display: flex; flex-direction: column; gap: 1rem;">
-            <div class="step-item" style="text-align: left; display: flex; align-items: flex-start; gap: 1rem; padding: 0;">
-              <div class="step-number" style="margin: 0; min-width: 50px;">1</div>
-              <div>
-                <h4>Fill the Bucket</h4>
-                <p>Fill the specially designed bucket with water from any available source. A single fill can irrigate an entire garden bed.</p>
-              </div>
-            </div>
-            <div class="step-item" style="text-align: left; display: flex; align-items: flex-start; gap: 1rem; padding: 0;">
-              <div class="step-number" style="margin: 0; min-width: 50px;">2</div>
-              <div>
-                <h4>Gravity Does the Work</h4>
-                <p>Elevated placement allows gravity to push water through the tubing system, delivering a slow, steady drip to each plant.</p>
-              </div>
-            </div>
-            <div class="step-item" style="text-align: left; display: flex; align-items: flex-start; gap: 1rem; padding: 0;">
-              <div class="step-number" style="margin: 0; min-width: 50px;">3</div>
-              <div>
-                <h4>Targeted Irrigation</h4>
-                <p>Water is delivered directly to the root zone, minimising evaporation and waste. Plants receive exactly what they need to thrive.</p>
-              </div>
-            </div>
-            <div class="step-item" style="text-align: left; display: flex; align-items: flex-start; gap: 1rem; padding: 0;">
-              <div class="step-number" style="margin: 0; min-width: 50px;">4</div>
-              <div>
-                <h4>Repeat &amp; Grow</h4>
-                <p>The system is reusable and durable, designed to serve families for multiple growing seasons with minimal maintenance.</p>
-              </div>
-            </div>
+    <!-- Watering -->
+    <section class="section bg-cream" id="watering">
+      <div class="container">
+        <div class="mission-grid">
+          <div class="mission-img fade-in-left" style="order: 0;">
+            <img src="https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?w=600&h=500&fit=crop" alt="Drip irrigation system watering plants efficiently" loading="lazy">
           </div>
-        </div>
-        <div class="fade-in fade-in-delay-1" style="background: linear-gradient(135deg, #e0f0ff, var(--cream)); border-radius: var(--radius-xl); padding: 3rem; text-align: center;">
-          <div style="font-size: 5rem; margin-bottom: 1rem;">&#128167;</div>
-          <h3 style="color: var(--green-dark);">Bucket Watering<br>System</h3>
-          <p class="mt-2" style="font-size: 0.95rem;">Efficient, sustainable, and brilliantly simple. Designed for water-scarce regions where every drop matters.</p>
-          <div class="mt-4" style="text-align: left; padding: 1.5rem; background: rgba(255,255,255,0.6); border-radius: var(--radius-lg);">
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;"><strong style="color: var(--green-dark);">No electricity</strong> required</p>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;"><strong style="color: var(--green-dark);">No complex setup</strong> — anyone can install it</p>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;"><strong style="color: var(--green-dark);">Reduces water waste</strong> by up to 70%</p>
-            <p style="font-size: 0.85rem; color: var(--text-muted);"><strong style="color: var(--green-dark);">Built to last</strong> multiple growing seasons</p>
+          <div class="fade-in-right">
+            <span class="section-label">Component Two</span>
+            <h2 class="section-title">Bucket Watering System</h2>
+            <p>Water is precious in most of Africa. Our gravity-fed drip irrigation system uses up to 70% less water than traditional watering methods — and it's built from a simple bucket, tubing, and drip emitters.</p>
+            <h4 style="margin: var(--space-xl) 0 var(--space-md);">How It Works</h4>
+            <p>Fill the bucket, elevate it, and gravity does the rest. Water drips slowly and directly to each plant's roots — no waste, no evaporation, no electricity needed.</p>
+            <h4 style="margin: var(--space-xl) 0 var(--space-md);">Built to Last</h4>
+            <p>Designed for durability and easy repair with locally available materials. Works across multiple growing seasons with minimal maintenance.</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Bio-Fertiliser Section -->
-  <section class="section-cream" id="fertiliser">
-    <div class="container">
-      <div class="grid-2" style="align-items: center; gap: 4rem;">
-        <div class="fade-in fade-in-delay-1" style="background: linear-gradient(135deg, var(--gold-pale), var(--cream)); border-radius: var(--radius-xl); padding: 3rem; text-align: center;">
-          <div style="font-size: 5rem; margin-bottom: 1rem;">&#129716;</div>
-          <h3 style="color: var(--green-dark);">Natural<br>Bio-Fertiliser</h3>
-          <p class="mt-2" style="font-size: 0.95rem;">A powerful blend of beneficial microbes that revitalises soil and supercharges plant growth — naturally.</p>
-          <div class="mt-4" style="text-align: left; padding: 1.5rem; background: rgba(255,255,255,0.6); border-radius: var(--radius-lg);">
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;"><strong style="color: var(--green-dark);">100% natural</strong> — no harsh chemicals</p>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;"><strong style="color: var(--green-dark);">Enriches soil</strong> for healthier crops</p>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;"><strong style="color: var(--green-dark);">Safe for families</strong> and the environment</p>
-            <p style="font-size: 0.85rem; color: var(--text-muted);"><strong style="color: var(--green-dark);">Improves yields</strong> season after season</p>
+    <!-- Bio-Fertiliser -->
+    <section class="section bg-white" id="fertiliser">
+      <div class="container">
+        <div class="mission-grid">
+          <div class="fade-in-left">
+            <span class="section-label">Component Three</span>
+            <h2 class="section-title">Organic Bio-Fertiliser</h2>
+            <p>Depleted soil is one of Africa's biggest agricultural challenges. Our bio-fertiliser uses beneficial microbes to restore soil health naturally — no chemicals, no environmental damage.</p>
+            <h4 style="margin: var(--space-xl) 0 var(--space-md);">The Science</h4>
+            <p>Beneficial bacteria and fungi break down organic matter, fix nitrogen from the air, and make phosphorus available to plant roots. The result: healthier soil that produces more food.</p>
+            <h4 style="margin: var(--space-xl) 0 var(--space-md);">Long-Term Impact</h4>
+            <p>Unlike chemical fertilisers that deplete soil over time, bio-fertiliser improves soil with every application. Each season, the soil gets more fertile — not less.</p>
           </div>
-        </div>
-        <div class="fade-in">
-          <p class="eyebrow mb-3">Product 03</p>
-          <h2>Bio-Fertiliser</h2>
-          <p class="mt-3">Our bio-fertiliser is a natural blend of beneficial microbes specifically formulated to rejuvenate and enrich African soils. Unlike synthetic fertilisers that can deplete soil health over time, our bio-fertiliser works with the earth's natural processes to create a thriving, living soil ecosystem.</p>
-          <p class="mt-2">The carefully selected microorganisms in our formula break down organic matter, fix nitrogen, and unlock nutrients that are already present in the soil but unavailable to plants. The result is healthier, more robust crops that grow stronger with each passing season.</p>
-          <div class="mt-4" style="display: flex; flex-direction: column; gap: 1rem;">
-            <div class="value-item">
-              <div class="value-icon">&#127811;</div>
-              <div>
-                <h4>Enhanced Soil Health</h4>
-                <p>Restores depleted soils by introducing beneficial microorganisms that rebuild the natural soil ecosystem from the ground up.</p>
-              </div>
-            </div>
-            <div class="value-item">
-              <div class="value-icon">&#128683;</div>
-              <div>
-                <h4>Reduced Chemical Dependence</h4>
-                <p>Eliminates the need for harmful synthetic fertilisers, protecting both the environment and the health of farming families.</p>
-              </div>
-            </div>
-            <div class="value-item">
-              <div class="value-icon">&#128202;</div>
-              <div>
-                <h4>Increased Yields</h4>
-                <p>Communities report significantly improved crop yields after applying our bio-fertiliser, meaning more food on the table for every family.</p>
-              </div>
-            </div>
+          <div class="mission-img fade-in-right">
+            <img src="https://images.unsplash.com/photo-1585336261022-680e295ce3fe?w=600&h=500&fit=crop" alt="Rich organic compost and bio-fertiliser" loading="lazy">
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA Section -->
-  <section class="section-green" style="text-align: center;">
-    <div class="container">
-      <h2 class="fade-in" style="color: var(--white);">Ready to Grow with Us?</h2>
-      <p class="fade-in fade-in-delay-1" style="color: rgba(255,255,255,0.9); max-width: 600px; margin: 1rem auto 2rem; font-size: 1.1rem;">Every kit contains our premium seeds, bucket watering system, and bio-fertiliser — everything a family needs to start their journey from barren land to bountiful harvest.</p>
-      <div class="hero-buttons fade-in fade-in-delay-2">
-        <a href="shop.html" class="btn btn-primary btn-lg">Shop Now</a>
-        <a href="shop.html" class="btn btn-outline btn-lg">Donate a Kit — R1,500</a>
+    <!-- FAQ -->
+    <section class="section bg-cream">
+      <div class="container" style="max-width: 760px;">
+        <div class="text-center">
+          <span class="section-label" style="padding-left:0;">Common Questions</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+        </div>
+        <div style="margin-top: var(--space-2xl);">
+          <div class="faq-item"><button class="faq-question">How long do the seeds take to grow?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Most varieties produce their first harvest within 6-8 weeks. Leafy greens like spinach can be harvested as early as 4 weeks.</p></div></div>
+          <div class="faq-item"><button class="faq-question">Do you need farming experience?<span class="faq-icon">+</span></button><div class="faq-answer"><p>No. Every kit includes a step-by-step planting guide written in simple language. Designed for first-time growers.</p></div></div>
+          <div class="faq-item"><button class="faq-question">How much space is needed?<span class="faq-icon">+</span></button><div class="faq-answer"><p>A kit works in a space as small as 4 square metres — backyards, community plots, school gardens, or even large containers.</p></div></div>
+          <div class="faq-item"><button class="faq-question">Can I save seeds for the next season?<span class="faq-icon">+</span></button><div class="faq-answer"><p>Yes. Our open-pollinated varieties mean you can save seeds from your harvest and plant them again — creating a self-sustaining cycle.</p></div></div>
+          <div class="faq-item"><button class="faq-question">Where do you deliver kits?<span class="faq-icon">+</span></button><div class="faq-answer"><p>South Africa, Zimbabwe, Mozambique, Malawi, and Tanzania. We're expanding as our network grows.</p></div></div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
+    <section class="section cta-section">
+      <div class="container">
+        <h2>R1,500. One Kit. A Family Fed.</h2>
+        <p>Every kit contains all three components — seeds, watering system, and bio-fertiliser. Ready to change a life?</p>
+        <div class="cta-buttons">
+          <a href="shop.html" class="btn btn-primary btn-lg">Get a Kit</a>
+          <a href="contact.html" class="btn btn-secondary btn-lg">Ask a Question</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="images/logo.png" alt="Harvesting Hope">
-          <p>Eliminating hunger one seed at a time. Transforming communities across Africa through sustainable agriculture and faith.</p>
-        </div>
-        <div>
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="blog/">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Products</h4>
-          <ul>
-            <li><a href="products.html#seeds">Premium Seeds</a></li>
-            <li><a href="products.html#watering">Watering System</a></li>
-            <li><a href="products.html#fertiliser">Bio-Fertiliser</a></li>
-            <li><a href="shop.html">Buy a Kit</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-          </ul>
-        </div>
+        <div class="footer-brand"><img src="images/logo.png" alt="Harvesting Hope logo"><p>Eliminating hunger one seed at a time.</p><form class="newsletter-form" id="newsletterForm"><input type="email" placeholder="Your email" required><button type="submit">Join</button></form></div>
+        <div><h4>Navigate</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Our Kit</a></li><li><a href="shop.html">Shop</a></li></ul></div>
+        <div><h4>Learn</h4><ul class="footer-links"><li><a href="blog/">Blog</a></li><li><a href="products.html#seeds">Seeds</a></li><li><a href="products.html#watering">Watering</a></li><li><a href="products.html#fertiliser">Fertiliser</a></li></ul></div>
+        <div><h4>Contact</h4><ul class="footer-links"><li><a href="contact.html">Get in Touch</a></li><li><a href="mailto:info@harvestinghope.africa">info@harvestinghope.africa</a></li><li>South Africa</li></ul></div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 Harvesting Hope. All rights reserved.</p>
-        <a href="https://harvestinghope.africa">harvestinghope.africa</a>
-      </div>
+      <div class="footer-bottom"><span>&copy; 2024-2026 Harvesting Hope. All rights reserved.</span><div class="footer-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div></div>
     </div>
   </footer>
-
+  <div class="mobile-cta"><a href="shop.html" class="btn btn-primary">Donate a Kit — R1,500</a></div>
+  <script src="js/config.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

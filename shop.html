@@ -3,615 +3,142 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop — Harvesting Hope</title>
-  <meta name="description" content="Buy, donate, or gift a Harvesting Hope Small Scale Agricultural Kit. Premium seeds, innovative watering system, and bio-fertiliser — everything a family needs to grow their own food.">
-  <meta name="keywords" content="buy agricultural kit, donate food kit Africa, gift sustainable farming kit, Harvesting Hope shop, seeds watering system bio-fertiliser">
+  <title>Buy, Donate or Gift a Kit | Harvesting Hope</title>
+  <meta name="description" content="Buy a Harvesting Hope kit for R1,500. Donate a kit to a community in need, or gift one to someone who cares.">
   <link rel="canonical" href="https://harvestinghope.africa/shop.html">
-
-  <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Shop — Harvesting Hope">
-  <meta property="og:description" content="Buy, donate, or gift a Harvesting Hope Agricultural Kit. Everything a family needs to start growing their own food.">
   <meta property="og:url" content="https://harvestinghope.africa/shop.html">
-  <meta property="og:image" content="https://harvestinghope.africa/images/logo.png">
+  <meta property="og:title" content="Buy, Donate or Gift a Kit | Harvesting Hope">
+  <meta property="og:description" content="R1,500 per kit. Buy for yourself, donate to a community, or gift to someone special.">
+  <meta property="og:image" content="https://harvestinghope.africa/images/og-image.jpg">
   <meta property="og:site_name" content="Harvesting Hope">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Shop — Harvesting Hope">
-  <meta name="twitter:description" content="Buy, donate, or gift a Harvesting Hope Agricultural Kit. Everything a family needs to start growing their own food.">
-  <meta name="twitter:image" content="https://harvestinghope.africa/images/logo.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/logo.png">
-
-  <!-- Styles -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-
-  <!-- Structured Data — Products -->
-  <script type="application/ld+json">
-  [
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Harvesting Hope Agricultural Kit — Buy",
-      "description": "Get the full Harvesting Hope Small Scale Agricultural Kit with premium seeds, bucket watering system, bio-fertiliser, planting guide, and community support.",
-      "brand": { "@type": "Brand", "name": "Harvesting Hope" },
-      "offers": {
-        "@type": "Offer",
-        "price": "1500",
-        "priceCurrency": "ZAR",
-        "availability": "https://schema.org/InStock",
-        "url": "https://harvestinghope.africa/shop.html"
-      },
-      "image": "https://harvestinghope.africa/images/logo.png"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Harvesting Hope Agricultural Kit — Donate",
-      "description": "Sponsor a Harvesting Hope Agricultural Kit for a community in need. Includes impact report and certificate of appreciation.",
-      "brand": { "@type": "Brand", "name": "Harvesting Hope" },
-      "offers": {
-        "@type": "Offer",
-        "price": "1500",
-        "priceCurrency": "ZAR",
-        "availability": "https://schema.org/InStock",
-        "url": "https://harvestinghope.africa/shop.html"
-      },
-      "image": "https://harvestinghope.africa/images/logo.png"
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Harvesting Hope Agricultural Kit — Gift",
-      "description": "Gift a Harvesting Hope Agricultural Kit to someone special. Includes personalised gift certificate and recipient notification.",
-      "brand": { "@type": "Brand", "name": "Harvesting Hope" },
-      "offers": {
-        "@type": "Offer",
-        "price": "1500",
-        "priceCurrency": "ZAR",
-        "availability": "https://schema.org/InStock",
-        "url": "https://harvestinghope.africa/shop.html#gift"
-      },
-      "image": "https://harvestinghope.africa/images/logo.png"
-    }
-  ]
-  </script>
-
-  <style>
-    /* Shop-specific styles */
-    .shop-hero {
-      background: linear-gradient(135deg, var(--cream) 0%, var(--gold-pale) 50%, var(--cream-dark) 100%);
-      padding: 10rem 0 5rem;
-      text-align: center;
-      position: relative;
-    }
-    .shop-hero::after {
-      content: '';
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      right: 0;
-      height: 80px;
-      background: var(--white);
-      clip-path: ellipse(55% 100% at 50% 100%);
-    }
-    .shop-hero h1 {
-      color: var(--green-dark);
-      margin-bottom: 1rem;
-    }
-    .shop-hero .eyebrow {
-      color: var(--gold-dark);
-      margin-bottom: 1rem;
-    }
-
-    .kit-card {
-      background: var(--white);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-      transition: all 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      border: 1px solid rgba(0,0,0,0.06);
-    }
-    .kit-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.14);
-    }
-
-    .kit-card-header {
-      padding: 2.5rem 2rem 2rem;
-      text-align: center;
-      position: relative;
-    }
-    .kit-card-header .kit-icon {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 2rem;
-      margin: 0 auto 1.25rem;
-    }
-    .kit-card-header h3 {
-      font-size: 1.35rem;
-      margin-bottom: 0.5rem;
-    }
-    .kit-card-header .kit-price {
-      font-family: var(--font-heading);
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1;
-    }
-    .kit-card-header .kit-price-label {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      margin-top: 0.25rem;
-    }
-    .kit-card-header p.kit-desc {
-      font-size: 0.9rem;
-      margin-top: 0.75rem;
-      line-height: 1.5;
-    }
-
-    /* Card color themes */
-    .kit-card--buy .kit-card-header {
-      background: linear-gradient(180deg, #e8f2e0 0%, #f5faf0 100%);
-    }
-    .kit-card--buy .kit-icon {
-      background: var(--green);
-      color: var(--white);
-    }
-    .kit-card--buy .kit-price { color: var(--green-dark); }
-
-    .kit-card--donate .kit-card-header {
-      background: linear-gradient(180deg, var(--gold-pale) 0%, #faf5e8 100%);
-    }
-    .kit-card--donate .kit-icon {
-      background: var(--gold);
-      color: var(--white);
-    }
-    .kit-card--donate .kit-price { color: var(--gold-dark); }
-
-    .kit-card--gift .kit-card-header {
-      background: linear-gradient(180deg, #f0e8f5 0%, #f8f4fa 100%);
-    }
-    .kit-card--gift .kit-icon {
-      background: #8b5cf6;
-      color: var(--white);
-    }
-    .kit-card--gift .kit-price { color: #6d28d9; }
-
-    /* Featured badge */
-    .kit-card--donate {
-      border: 2px solid var(--gold);
-      position: relative;
-    }
-    .kit-badge {
-      position: absolute;
-      top: 1.25rem;
-      right: 1.25rem;
-      background: var(--gold);
-      color: var(--white);
-      padding: 0.3rem 0.85rem;
-      border-radius: 20px;
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .kit-card-body {
-      padding: 1.5rem 2rem 2.5rem;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .kit-features {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 2rem;
-      flex: 1;
-    }
-    .kit-features li {
-      padding: 0.65rem 0;
-      border-bottom: 1px solid #f0ede8;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.92rem;
-      color: var(--text-body);
-    }
-    .kit-features li:last-child {
-      border-bottom: none;
-    }
-    .kit-features li .check {
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7rem;
-      font-weight: 700;
-      flex-shrink: 0;
-    }
-    .kit-card--buy .check { background: #e8f2e0; color: var(--green); }
-    .kit-card--donate .check { background: var(--gold-pale); color: var(--gold-dark); }
-    .kit-card--gift .check { background: #ede5f5; color: #7c3aed; }
-
-    .kit-card-body .btn { width: 100%; text-align: center; }
-
-    /* Impact strip */
-    .impact-strip {
-      background: var(--green-dark);
-      padding: 3.5rem 0;
-    }
-    .impact-strip .grid-3 { align-items: center; }
-    .impact-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      margin: 0 auto 1rem;
-    }
-    .impact-strip h4 {
-      color: var(--white);
-      text-align: center;
-      font-size: 1.05rem;
-      margin-bottom: 0.35rem;
-    }
-    .impact-strip p {
-      color: rgba(255,255,255,0.7);
-      text-align: center;
-      font-size: 0.88rem;
-    }
-
-    /* Order note */
-    .order-note {
-      background: linear-gradient(135deg, var(--cream) 0%, var(--gold-pale) 100%);
-      border-radius: 16px;
-      padding: 2.5rem;
-      max-width: 640px;
-      margin: 0 auto;
-      text-align: center;
-      border: 1px solid rgba(200,149,46,0.15);
-    }
-    .order-note h3 { color: var(--brown); margin-bottom: 0.5rem; }
-    .order-note a { color: var(--green); font-weight: 600; text-decoration: underline; }
-    .order-note a:hover { color: var(--green-dark); }
-
-    /* Modal fixes */
-    .gift-modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-      backdrop-filter: blur(4px);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-    }
-    .gift-modal.active { display: flex; }
-    .gift-modal-content {
-      background: var(--white);
-      border-radius: 20px;
-      padding: 2.5rem;
-      max-width: 500px;
-      width: 100%;
-      position: relative;
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-    .gift-modal-close {
-      position: absolute;
-      top: 1rem;
-      right: 1.25rem;
-      background: none;
-      border: none;
-      font-size: 1.75rem;
-      cursor: pointer;
-      color: var(--text-muted);
-      line-height: 1;
-    }
-    .gift-modal-close:hover { color: var(--charcoal); }
-    .gift-form .field { margin-bottom: 1.25rem; }
-    .gift-form label {
-      display: block;
-      font-weight: 600;
-      font-size: 0.88rem;
-      margin-bottom: 0.4rem;
-      color: var(--charcoal);
-    }
-    .gift-form input,
-    .gift-form textarea {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border: 1.5px solid var(--border-light);
-      border-radius: 10px;
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      transition: border-color 0.2s;
-    }
-    .gift-form input:focus,
-    .gift-form textarea:focus {
-      outline: none;
-      border-color: var(--green);
-      box-shadow: 0 0 0 3px rgba(74,124,40,0.1);
-    }
-    .gift-form textarea { resize: vertical; min-height: 80px; }
-  </style>
 </head>
 <body>
+  <div class="page-loader" id="pageLoader"><div class="loader-content"><img src="images/logo.png" alt="Harvesting Hope"></div></div>
 
-  <!-- Page Loader -->
-  <div class="page-loader" id="pageLoader">
-    <img src="images/logo.png" alt="Loading...">
-  </div>
-
-  <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="container">
-      <a href="index.html" class="nav-logo">
-        <img src="images/logo.png" alt="Harvesting Hope Logo">
-        <span>Harvesting Hope</span>
-      </a>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="products.html">Products</a>
-        <a href="blog/">Blog</a>
-        <a href="contact.html">Contact</a>
-        <a href="shop.html" class="nav-cta active">Shop</a>
-      </div>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Harvesting Hope logo"><span>Harvesting Hope</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Our Kit</a></li>
+        <li><a href="blog/">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="shop.html" class="nav-cta active">Donate a Kit</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
 
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="products.html">Products</a>
-    <a href="shop.html">Shop</a>
-    <a href="blog/">Blog</a>
-    <a href="contact.html">Contact</a>
-  </div>
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <span class="section-label" style="padding-left:0; color: var(--gold-light);">Make a Difference</span>
+        <h1>Three Ways to Change a Life</h1>
+        <p>Every kit costs R1,500 and includes seeds, a watering system, and bio-fertiliser.</p>
+      </div>
+    </section>
 
-  <!-- Shop Hero -->
-  <section class="shop-hero">
-    <div class="container">
-      <p class="eyebrow fade-in">Make a Difference Today</p>
-      <h1 class="fade-in fade-in-delay-1">Buy, Donate, or Gift<br>an Agricultural Kit</h1>
-      <p class="fade-in fade-in-delay-2" style="color: var(--text-body); max-width: 620px; margin: 0 auto; font-size: 1.1rem;">Every kit contains premium seeds, our innovative watering system, and bio-fertiliser — everything a family needs to start growing their own food.</p>
-    </div>
-  </section>
-
-  <!-- Shop Cards -->
-  <section class="section-white" style="padding-top: 4rem;">
-    <div class="container">
-      <div class="grid-3">
-
-        <!-- Card 1: Buy a Kit -->
-        <div class="kit-card kit-card--buy fade-in">
-          <div class="kit-card-header">
-            <div class="kit-icon">&#127793;</div>
+    <section class="section bg-cream">
+      <div class="container">
+        <div class="grid-3 stagger">
+          <div class="shop-card fade-in">
+            <div class="shop-card-icon icon-circle-green">&#127793;</div>
             <h3>Buy a Kit</h3>
-            <div class="kit-price">R1,500</div>
-            <div class="kit-price-label">once-off</div>
-            <p class="kit-desc">Get the full Harvesting Hope Small Scale Agricultural Kit for your own garden.</p>
+            <p>Get a complete kit for your own garden, school, or community project.</p>
+            <div class="shop-price">R1,500 <span>per kit</span></div>
+            <a href="contact.html" class="btn btn-outline">Order Now</a>
           </div>
-          <div class="kit-card-body">
-            <ul class="kit-features">
-              <li><span class="check">&#10003;</span> Premium selected seeds</li>
-              <li><span class="check">&#10003;</span> Bucket watering system</li>
-              <li><span class="check">&#10003;</span> Bio-fertiliser</li>
-              <li><span class="check">&#10003;</span> Planting guide included</li>
-              <li><span class="check">&#10003;</span> Ongoing community support</li>
-            </ul>
-            <a href="contact.html" class="btn btn-secondary">Buy Now</a>
-          </div>
-        </div>
-
-        <!-- Card 2: Donate a Kit (Featured) -->
-        <div class="kit-card kit-card--donate fade-in fade-in-delay-1">
-          <div class="kit-card-header">
-            <span class="kit-badge">Most Popular</span>
-            <div class="kit-icon">&#10084;&#65039;</div>
+          <div class="shop-card fade-in" style="border-color: var(--gold-pale); box-shadow: var(--shadow-gold);">
+            <div class="shop-card-icon icon-circle-gold">&#10084;&#65039;</div>
             <h3>Donate a Kit</h3>
-            <div class="kit-price">R1,500</div>
-            <div class="kit-price-label">sponsor a community</div>
-            <p class="kit-desc">Sponsor a kit for a family or community in need across Africa.</p>
-          </div>
-          <div class="kit-card-body">
-            <ul class="kit-features">
-              <li><span class="check">&#10003;</span> Full agricultural kit delivered</li>
-              <li><span class="check">&#10003;</span> Delivered to a community in need</li>
-              <li><span class="check">&#10003;</span> Impact report sent to you</li>
-              <li><span class="check">&#10003;</span> Tax-deductible donation</li>
-              <li><span class="check">&#10003;</span> Certificate of appreciation</li>
-            </ul>
+            <p>Sponsor a kit for a community that needs it most. We handle delivery and training.</p>
+            <div class="shop-price">R1,500 <span>per kit</span></div>
             <a href="contact.html" class="btn btn-primary">Donate Now</a>
           </div>
-        </div>
-
-        <!-- Card 3: Gift a Kit -->
-        <div class="kit-card kit-card--gift fade-in fade-in-delay-2" id="gift">
-          <div class="kit-card-header">
-            <div class="kit-icon">&#127873;</div>
+          <div class="shop-card fade-in" id="gift">
+            <div class="shop-card-icon icon-circle-green">&#127873;</div>
             <h3>Gift a Kit</h3>
-            <div class="kit-price">R1,500</div>
-            <div class="kit-price-label">a meaningful gift</div>
-            <p class="kit-desc">Gift a kit to someone special — they'll receive a personalised certificate.</p>
-          </div>
-          <div class="kit-card-body">
-            <ul class="kit-features">
-              <li><span class="check">&#10003;</span> Full agricultural kit</li>
-              <li><span class="check">&#10003;</span> Personalised gift certificate</li>
-              <li><span class="check">&#10003;</span> Recipient notification</li>
-              <li><span class="check">&#10003;</span> Choose delivery destination</li>
-              <li><span class="check">&#10003;</span> A meaningful, lasting gift</li>
-            </ul>
-            <button class="btn btn-primary" onclick="document.getElementById('giftModal').classList.add('active')" style="width: 100%; background: #7c3aed; border-color: #7c3aed;">Gift a Kit</button>
+            <p>A meaningful gift — a kit donated in someone's name with a personalised message.</p>
+            <div class="shop-price">R1,500 <span>per kit</span></div>
+            <a href="#" class="btn btn-outline" data-modal="gift">Gift a Kit</a>
           </div>
         </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- Impact Strip -->
-  <section class="impact-strip">
-    <div class="container">
-      <div class="grid-3">
-        <div class="fade-in">
-          <div class="impact-icon">&#127793;</div>
-          <h4>Seeds of Change</h4>
-          <p>Premium seeds selected for African growing conditions.</p>
-        </div>
-        <div class="fade-in fade-in-delay-1">
-          <div class="impact-icon">&#128167;</div>
-          <h4>Water for Growth</h4>
-          <p>Innovative bucket system — every drop counts.</p>
-        </div>
-        <div class="fade-in fade-in-delay-2">
-          <div class="impact-icon">&#129716;</div>
-          <h4>Nourished Soil</h4>
-          <p>Natural bio-fertiliser for sustainable harvests.</p>
+        <div class="text-center fade-in" style="margin-top: var(--space-3xl); max-width: 600px; margin-left: auto; margin-right: auto;">
+          <p style="color: var(--text-light); font-size: 0.9rem;">Payment options are being finalised. Contact us directly to arrange your kit purchase or donation.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Order Note -->
-  <section class="section-white">
-    <div class="container">
-      <div class="order-note fade-in">
-        <h3>How to Order</h3>
-        <p style="color: var(--text-body);">Payment gateway coming soon. For now, please <a href="contact.html">contact us</a> to complete your purchase, donation, or gift.</p>
+    <section class="section bg-white">
+      <div class="container text-center">
+        <span class="section-label" style="padding-left:0;">Every Kit Includes</span>
+        <h2 class="section-title">Everything Needed to Start Growing</h2>
+        <div class="grid-3 stagger" style="margin-top: var(--space-3xl);">
+          <div class="card-embossed icon-card fade-in">
+            <div class="icon-circle icon-circle-green">&#127807;</div>
+            <h3>Premium Seeds</h3>
+            <p>Drought-resistant varieties selected for African climates.</p>
+          </div>
+          <div class="card-embossed icon-card fade-in">
+            <div class="icon-circle icon-circle-gold">&#128167;</div>
+            <h3>Watering System</h3>
+            <p>Gravity-fed drip irrigation — 70% less water usage.</p>
+          </div>
+          <div class="card-embossed icon-card fade-in">
+            <div class="icon-circle icon-circle-green">&#129716;</div>
+            <h3>Bio-Fertiliser</h3>
+            <p>Organic microbes that restore soil health naturally.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container">
+        <h2>Questions About Ordering?</h2>
+        <p>Our team is happy to help with bulk orders, corporate sponsorships, or any questions about the kits.</p>
+        <div class="cta-buttons"><a href="contact.html" class="btn btn-primary btn-lg">Contact Us</a></div>
+      </div>
+    </section>
+  </main>
 
   <!-- Gift Modal -->
-  <div class="gift-modal" id="giftModal">
-    <div class="gift-modal-content">
-      <button class="gift-modal-close" onclick="document.getElementById('giftModal').classList.remove('active')" aria-label="Close">&times;</button>
-      <h3 style="color: var(--green-dark); margin-bottom: 0.25rem;">Gift a Kit</h3>
-      <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.92rem;">Fill in the details below and we'll send a personalised certificate to your recipient.</p>
-      <form class="gift-form" id="giftForm">
-        <div class="field">
-          <label>Your Name *</label>
-          <input type="text" name="sender_name" required placeholder="Your full name">
-        </div>
-        <div class="field">
-          <label>Your Email *</label>
-          <input type="email" name="sender_email" required placeholder="you@example.com">
-        </div>
-        <div class="field">
-          <label>Recipient's Name *</label>
-          <input type="text" name="recipient_name" required placeholder="Recipient's full name">
-        </div>
-        <div class="field">
-          <label>Recipient's Email *</label>
-          <input type="email" name="recipient_email" required placeholder="recipient@example.com">
-        </div>
-        <div class="field">
-          <label>Personal Message</label>
-          <textarea name="message" placeholder="Write a personal message to include with the gift certificate..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Gift</button>
-      </form>
-    </div>
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+  <div class="modal" id="modal">
+    <button class="modal-close" aria-label="Close">&times;</button>
+    <h3 style="margin-bottom: var(--space-lg);">Gift a Kit</h3>
+    <p style="color: var(--text-light); margin-bottom: var(--space-xl); font-size: 0.95rem;">Fill in your details and the recipient's. We'll send them a personalised notification.</p>
+    <form id="giftForm">
+      <div class="form-group"><label class="form-label" for="senderName">Your Name</label><input class="form-input" type="text" id="senderName" name="senderName" required><div class="form-error">This field is required</div></div>
+      <div class="form-group"><label class="form-label" for="senderEmail">Your Email</label><input class="form-input" type="email" id="senderEmail" name="senderEmail" required><div class="form-error">Please enter a valid email</div></div>
+      <div class="form-group"><label class="form-label" for="recipientName">Recipient's Name</label><input class="form-input" type="text" id="recipientName" name="recipientName" required><div class="form-error">This field is required</div></div>
+      <div class="form-group"><label class="form-label" for="recipientEmail">Recipient's Email</label><input class="form-input" type="email" id="recipientEmail" name="recipientEmail" required><div class="form-error">Please enter a valid email</div></div>
+      <div class="form-group"><label class="form-label" for="giftMessage">Personal Message (optional)</label><textarea class="form-textarea" id="giftMessage" name="giftMessage" rows="3" placeholder="Write a message..."></textarea></div>
+      <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Send Gift Kit Request</button>
+    </form>
   </div>
 
-  <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand">
-          <img src="images/logo.png" alt="Harvesting Hope">
-          <p>Eliminating hunger one seed at a time. Transforming communities across Africa through sustainable agriculture and faith.</p>
-        </div>
-        <div>
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="products.html">Products</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="blog/">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Products</h4>
-          <ul>
-            <li><a href="products.html#seeds">Premium Seeds</a></li>
-            <li><a href="products.html#watering">Watering System</a></li>
-            <li><a href="products.html#fertiliser">Bio-Fertiliser</a></li>
-            <li><a href="shop.html">Buy a Kit</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-          </ul>
-        </div>
+        <div class="footer-brand"><img src="images/logo.png" alt="Harvesting Hope logo"><p>Eliminating hunger one seed at a time.</p><form class="newsletter-form" id="newsletterForm"><input type="email" placeholder="Your email" required><button type="submit">Join</button></form></div>
+        <div><h4>Navigate</h4><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="products.html">Our Kit</a></li><li><a href="shop.html">Shop</a></li></ul></div>
+        <div><h4>Learn</h4><ul class="footer-links"><li><a href="blog/">Blog</a></li><li><a href="products.html#seeds">Seeds</a></li><li><a href="products.html#watering">Watering</a></li><li><a href="products.html#fertiliser">Fertiliser</a></li></ul></div>
+        <div><h4>Contact</h4><ul class="footer-links"><li><a href="contact.html">Get in Touch</a></li><li><a href="mailto:info@harvestinghope.africa">info@harvestinghope.africa</a></li><li>South Africa</li></ul></div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 Harvesting Hope. All rights reserved.</p>
-        <a href="https://harvestinghope.africa">harvestinghope.africa</a>
-      </div>
+      <div class="footer-bottom"><span>&copy; 2024-2026 Harvesting Hope. All rights reserved.</span><div class="footer-legal"><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></div></div>
     </div>
   </footer>
-
+  <div class="mobile-cta"><a href="contact.html" class="btn btn-primary">Donate a Kit — R1,500</a></div>
+  <script src="js/config.js"></script>
   <script src="js/main.js"></script>
-  <script>
-    // Close gift modal on overlay click
-    document.getElementById('giftModal').addEventListener('click', function(e) {
-      if (e.target === this) this.classList.remove('active');
-    });
-    // Close on Escape
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') document.getElementById('giftModal').classList.remove('active');
-    });
-    // Gift form submission
-    document.getElementById('giftForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      if (typeof SITE_CONFIG !== 'undefined' && SITE_CONFIG.giftWebhook) {
-        const formData = new FormData(this);
-        const data = Object.fromEntries(formData.entries());
-        fetch(SITE_CONFIG.giftWebhook, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        }).then(() => {
-          alert('Thank you! Your gift details have been sent. We will be in touch shortly.');
-          document.getElementById('giftModal').classList.remove('active');
-          this.reset();
-        }).catch(() => {
-          alert('Something went wrong. Please contact us directly at info@harvestinghope.africa');
-        });
-      } else {
-        alert('Thank you for your interest! Please contact us at info@harvestinghope.africa to complete your gift.');
-        document.getElementById('giftModal').classList.remove('active');
-      }
-    });
-  </script>
 </body>
 </html>

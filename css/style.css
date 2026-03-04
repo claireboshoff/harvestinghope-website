@@ -294,15 +294,14 @@ strong { color: var(--green-dark); }
 
 .nav-logo img {
   height: 48px;
-  width: 48px;
-  border-radius: 50%;
-  object-fit: cover;
-  transition: height var(--duration) var(--ease), width var(--duration) var(--ease);
+  width: auto;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--gold);
+  transition: height var(--duration) var(--ease);
 }
 
 .navbar.scrolled .nav-logo img {
   height: 40px;
-  width: 40px;
 }
 
 .nav-logo span {
@@ -493,8 +492,8 @@ strong { color: var(--green-dark); }
 .loader-content img {
   width: 64px;
   height: 64px;
-  border-radius: 50%;
-  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--gold);
   animation: pulse-gentle 1.5s ease-in-out infinite;
 }
 
@@ -1163,9 +1162,9 @@ strong { color: var(--green-dark); }
 
 .footer-brand img {
   height: 48px;
-  width: 48px;
-  border-radius: 50%;
-  object-fit: cover;
+  width: auto;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--gold);
   margin-bottom: var(--space-md);
 }
 

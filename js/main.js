@@ -20,12 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
 function initLoader() {
   const loader = document.getElementById('pageLoader');
   if (!loader) return;
-  window.addEventListener('load', () => {
+  const hide = () => {
     setTimeout(() => {
       loader.classList.add('hidden');
       setTimeout(() => loader.remove(), 400);
     }, 300);
-  });
+  };
+  if (document.readyState === 'complete') hide();
+  else window.addEventListener('load', hide);
 }
 
 /* --- Sticky Navbar --- */

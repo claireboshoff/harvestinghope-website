@@ -469,6 +469,23 @@ strong { color: var(--green-dark); }
   pointer-events: none;
 }
 
+/* Fallback: auto-hide loader after 3s if JS fails */
+@keyframes loader-fallback {
+  0%, 99% { opacity: 1; }
+  100% { opacity: 0; pointer-events: none; }
+}
+.page-loader {
+  animation: loader-fallback 3s forwards;
+}
+
+/* Fallback: show content if JS doesn't trigger fade-in within 2s */
+@keyframes fade-fallback {
+  to { opacity: 1; transform: none; }
+}
+.fade-in, .fade-in-left, .fade-in-right {
+  animation: fade-fallback 0.6s ease 2s forwards;
+}
+
 .loader-content {
   text-align: center;
 }

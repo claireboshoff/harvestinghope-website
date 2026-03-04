@@ -149,23 +149,39 @@ function initCounters() {
 
 /* --- Forms --- */
 function initForms() {
+  const endpoint = window.SITE_CONFIG?.formEndpoint;
+
+  async function submitToFormService(data, formType) {
+    if (!endpoint) return false;
+    const payload = { ...data, _subject: `${formType} — Harvesting Hope`, _template: 'table' };
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    return res.ok;
+  }
+
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       if (!validateForm(contactForm)) return;
       const data = Object.fromEntries(new FormData(contactForm));
-      const webhook = window.SITE_CONFIG?.contactWebhook;
-      if (webhook) {
-        try {
-          await fetch(webhook, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
-          showToast('Message sent! We\'ll get back to you soon.', 'success');
+      const btn = contactForm.querySelector('button[type="submit"]');
+      btn.disabled = true; btn.textContent = 'Sending...';
+      try {
+        const sent = await submitToFormService(data, 'Contact Enquiry');
+        if (sent) {
+          showToast('Message sent! Carin will get back to you soon.', 'success');
           contactForm.reset();
-        } catch { showToast('Something went wrong. Please try again.', 'error'); }
-      } else {
-        showToast('Message received! We\'ll be in touch.', 'success');
-        contactForm.reset();
+        } else {
+          window.location.href = `mailto:carin@harvestinghope.africa?subject=Website Enquiry&body=Name: ${encodeURIComponent(data.name)}%0AEmail: ${encodeURIComponent(data.email)}%0A%0A${encodeURIComponent(data.message)}`;
+        }
+      } catch {
+        window.location.href = `mailto:carin@harvestinghope.africa?subject=Website Enquiry&body=Name: ${encodeURIComponent(data.name)}%0AEmail: ${encodeURIComponent(data.email)}%0A%0A${encodeURIComponent(data.message)}`;
       }
+      btn.disabled = false; btn.textContent = 'Send Message';
     });
   }
 
@@ -175,19 +191,21 @@ function initForms() {
       e.preventDefault();
       if (!validateForm(giftForm)) return;
       const data = Object.fromEntries(new FormData(giftForm));
-      const webhook = window.SITE_CONFIG?.giftWebhook;
-      if (webhook) {
-        try {
-          await fetch(webhook, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
-          showToast('Gift kit request submitted!', 'success');
+      const btn = giftForm.querySelector('button[type="submit"]');
+      btn.disabled = true; btn.textContent = 'Sending...';
+      try {
+        const sent = await submitToFormService(data, 'Gift a Kit Request');
+        if (sent) {
+          showToast('Gift kit request sent to Carin!', 'success');
           giftForm.reset();
           closeModal();
-        } catch { showToast('Something went wrong. Please try again.', 'error'); }
-      } else {
-        showToast('Gift kit request noted! We\'ll be in touch.', 'success');
-        giftForm.reset();
-        closeModal();
+        } else {
+          window.location.href = `mailto:carin@harvestinghope.africa?subject=Gift a Kit Request&body=From: ${encodeURIComponent(data.senderName)} (${encodeURIComponent(data.senderEmail)})%0ARecipient: ${encodeURIComponent(data.recipientName)} (${encodeURIComponent(data.recipientEmail)})%0AMessage: ${encodeURIComponent(data.giftMessage || 'N/A')}`;
+        }
+      } catch {
+        window.location.href = `mailto:carin@harvestinghope.africa?subject=Gift a Kit Request&body=From: ${encodeURIComponent(data.senderName)}`;
       }
+      btn.disabled = false; btn.textContent = 'Send Gift Kit Request';
     });
   }
 
@@ -197,10 +215,7 @@ function initForms() {
       e.preventDefault();
       const email = newsletterForm.querySelector('input[type="email"]').value;
       if (!email) return;
-      const webhook = window.SITE_CONFIG?.newsletterWebhook;
-      if (webhook) {
-        try { await fetch(webhook, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email }) }); } catch {}
-      }
+      try { await submitToFormService({ email }, 'Newsletter Signup'); } catch {}
       showToast('Subscribed! Welcome to the community.', 'success');
       newsletterForm.reset();
     });

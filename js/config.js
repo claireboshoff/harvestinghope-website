@@ -4,8 +4,8 @@
    ============================================================ */
 
 window.SITE_CONFIG = {
-  contactWebhook: '',     // n8n webhook URL for contact form
-  giftWebhook: '',        // n8n webhook URL for gift-a-kit form
+  enquiryEmail: 'carin@harvestinghope.africa',
+  formEndpoint: 'https://formsubmit.co/ajax/carin@harvestinghope.africa',
   newsletterWebhook: '',  // n8n webhook URL for newsletter signup
   siteName: 'Harvesting Hope',
   siteUrl: 'https://harvestinghope.africa'

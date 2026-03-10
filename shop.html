@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate a Kit — R1,500 Feeds a Family | Harvesting Hope</title>
+  <meta name="description" content="Donate a Harvesting Hope kit for R1,500 and feed a South African family. Choose from R500 seed sponsor, R1,500 full kit, R5,000 community pack, or custom amount.">
+  <link rel="canonical" href="https://harvestinghope.africa/shop.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://harvestinghope.africa/shop.html">
+  <meta property="og:title" content="Donate a Kit — Harvesting Hope">
+  <meta property="og:description" content="R1,500. One kit. A family fed. Choose your giving level and make a direct impact today.">
+  <meta property="og:image" content="https://harvestinghope.africa/images/og-image.jpg">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .shop-form { background: var(--white); border-radius: 16px; padding: 2.5rem; box-shadow: var(--shadow-lg); max-width: 560px; }
+    .shop-form h3 { margin-bottom: 1.5rem; color: var(--green-dark); }
+    .amount-label { font-weight: 600; font-size: 0.9rem; margin-bottom: 0.75rem; display: block; }
+    .custom-amount-wrap { margin-top: 0.75rem; position: relative; }
+    .custom-amount-wrap span { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); font-weight: 700; color: var(--text-mid); }
+    .custom-amount-wrap input { padding-left: 2.25rem; }
+    .info-box { background: var(--cream-dark); border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--text-mid); border-left: 3px solid var(--green); }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="images/logo.png" alt="Harvesting Hope Logo" width="40" height="40">
+        Harvesting Hope
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/products.html">Our Kit</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+        <li><a href="/shop.html" class="btn btn-primary">Donate a Kit</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container">
+      <span class="section-label">Make a Difference Today</span>
+      <h1>Donate a Harvesting Hope Kit</h1>
+      <p>Choose your giving level below. 100% of your donation goes directly to kits — seeds, water system, and bio-fertiliser — delivered to families who need them most.</p>
+    </div>
+  </header>
+
+  <!-- Donation Options -->
+  <section>
+    <div class="container">
+      <div class="grid-2" style="align-items:start;gap:4rem;">
+
+        <!-- Left: Options -->
+        <div>
+          <span class="section-label">Choose Your Impact</span>
+          <h2 class="mb-2">Every Amount Matters</h2>
+          <div class="pricing-grid" style="grid-template-columns:1fr 1fr;gap:1.25rem;">
+            <div class="pricing-card reveal">
+              <h3>Seed Sponsor</h3>
+              <span class="pricing-amount">R500</span>
+              <p>Cover the seed component — a season of drought-resistant vegetables to start a family garden.</p>
+              <a href="#donate-form" class="btn btn-secondary" onclick="selectAmount(500)">Select</a>
+            </div>
+            <div class="pricing-card featured reveal">
+              <h3>Full Kit Sponsor</h3>
+              <span class="pricing-amount">R1,500</span>
+              <p>One complete kit — seeds, water system, and bio-fertiliser. One family fully equipped.</p>
+              <a href="#donate-form" class="btn btn-primary" onclick="selectAmount(1500)">Select</a>
+            </div>
+            <div class="pricing-card reveal">
+              <h3>Community Pack</h3>
+              <span class="pricing-amount">R5,000</span>
+              <p>Three full kits + field training for a community group, school, or church garden.</p>
+              <a href="#donate-form" class="btn btn-secondary" onclick="selectAmount(5000)">Select</a>
+            </div>
+            <div class="pricing-card reveal">
+              <h3>Corporate Partner</h3>
+              <span class="pricing-amount">Custom</span>
+              <p>Bulk orders, B-BBEE recognition, branded impact reports available for businesses.</p>
+              <a href="/contact.html" class="btn btn-secondary">Contact Us</a>
+            </div>
+          </div>
+
+          <!-- Trust signals -->
+          <div style="margin-top:2rem;display:flex;gap:1.5rem;flex-wrap:wrap;">
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;color:var(--text-mid);">
+              <span style="color:var(--green);font-size:1.1rem;">✓</span> 100% goes to kits
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;color:var(--text-mid);">
+              <span style="color:var(--green);font-size:1.1rem;">✓</span> Registered NPO
+            </div>
+            <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.85rem;color:var(--text-mid);">
+              <span style="color:var(--green);font-size:1.1rem;">✓</span> Section 18A receipts available
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Form -->
+        <div id="donate-form">
+          <div class="shop-form">
+            <h3>Complete Your Donation</h3>
+            <div class="info-box">
+              💳 Online payment integration coming soon. Please contact us directly to arrange your donation via EFT or PayFast.
+            </div>
+            <form id="contact-form" data-webhook="#">
+              <span class="amount-label">Donation Amount</span>
+              <div class="amount-grid">
+                <button type="button" class="amount-btn" data-amount="500">R500</button>
+                <button type="button" class="amount-btn active" data-amount="1500">R1,500</button>
+                <button type="button" class="amount-btn" data-amount="5000">R5,000</button>
+              </div>
+              <div class="custom-amount-wrap">
+                <span>R</span>
+                <input type="number" id="custom-amount" placeholder="Custom amount" min="100" style="width:100%;padding:0.875rem 1rem 0.875rem 2.25rem;border:2px solid #E2E8F0;border-radius:12px;font-size:1rem;outline:none;">
+              </div>
+              <input type="hidden" id="donation-amount" name="amount" value="1500">
+
+              <div class="form-group" style="margin-top:1.5rem;">
+                <label for="donor-name">Your Name</label>
+                <input type="text" id="donor-name" name="name" placeholder="Full name" required>
+              </div>
+              <div class="form-group">
+                <label for="donor-email">Email Address</label>
+                <input type="email" id="donor-email" name="email" placeholder="your@email.com" required>
+              </div>
+              <div class="form-group">
+                <label for="donor-message">Message (optional)</label>
+                <textarea id="donor-message" name="message" placeholder="Who is this donation in honour of? Any message for the recipient family?"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:1rem;">
+                Submit Donation Request
+              </button>
+              <p style="font-size:0.8rem;color:var(--text-light);text-align:center;margin-top:1rem;">We'll contact you within 24 hours with payment details and a Section 18A receipt.</p>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- How donations are used -->
+  <section class="section-green">
+    <div class="container text-center">
+      <span class="section-label">Transparency</span>
+      <h2 style="color:white;margin-bottom:0.5rem;">Where Your Money Goes</h2>
+      <p style="color:rgba(255,255,255,0.75);max-width:480px;margin:0 auto 2.5rem;">We believe in radical transparency. Here's exactly how your R1,500 donation is allocated.</p>
+      <div class="impact-grid">
+        <div class="impact-card reveal">
+          <span class="impact-num">R600</span>
+          <span class="impact-label">Premium Seed Kit</span>
+        </div>
+        <div class="impact-card reveal">
+          <span class="impact-num">R500</span>
+          <span class="impact-label">Bucket Watering System</span>
+        </div>
+        <div class="impact-card reveal">
+          <span class="impact-num">R250</span>
+          <span class="impact-label">Bio-Fertiliser</span>
+        </div>
+        <div class="impact-card reveal">
+          <span class="impact-num">R150</span>
+          <span class="impact-label">Delivery &amp; Training</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="/" class="nav-logo" style="display:inline-flex;margin-bottom:0.5rem;"><img src="images/logo.png" alt="Harvesting Hope" width="36" height="36">Harvesting Hope</a><p>Eliminating hunger one seed at a time.</p></div>
+        <div class="footer-col"><h4>Navigate</h4><a href="/">Home</a><a href="/about.html">About Us</a><a href="/products.html">Our Kit</a><a href="/shop.html">Donate</a></div>
+        <div class="footer-col"><h4>Learn</h4><a href="/blog/index.html">Blog</a><a href="/products.html#seeds">Seeds</a><a href="/products.html#watering">Watering</a><a href="/products.html#fertiliser">Bio-Fertiliser</a></div>
+        <div class="footer-col"><h4>Contact</h4><a href="/contact.html">Get in Touch</a><a href="mailto:carin@harvestinghope.africa">carin@harvestinghope.africa</a><a href="https://wa.me/27000000000" target="_blank" rel="noopener">WhatsApp Us</a></div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Harvesting Hope. All rights reserved. Registered NPO, South Africa.</p>
+        <div class="footer-legal"><a href="/privacy-policy.html">Privacy Policy</a><a href="/terms.html">Terms of Use</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/27000000000" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <div class="mobile-cta"><a href="#donate-form" class="btn btn-primary">Donate a Kit — R1,500</a></div>
+
+  <script src="js/main.js" defer></script>
+  <script>
+    function selectAmount(amount) {
+      document.querySelectorAll('.amount-btn').forEach(b => {
+        b.classList.toggle('active', parseInt(b.dataset.amount) === amount);
+      });
+      document.getElementById('donation-amount').value = amount;
+    }
+    // Pre-select from URL param
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('amount')) selectAmount(parseInt(params.get('amount')));
+  </script>
+</body>
+</html>
